@@ -1,0 +1,293 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                  %
+%         Thesis template           %
+%                                  %
+% version 1.0 04-11-13             %
+%                                  %
+%                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%   Preamble
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% Document type 
+%%%%%%%%%%%%%%%%%%%%
+
+% Definition de la classe de document: article, book, report, letter, slides
+% Options:  	taille de la police: 10pt, 11pt, 12pt, ...
+%		format du papier: a4paper, a5paper ...
+% 		stade de developpement: draft, final
+%		autres: oneside, twoside, twocolumn (recto simple, recto-verso, sur deux colonne)
+\documentclass[12pt, letterpaper, twoside,spanish, openright]{usach-tesis}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Language and font
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Gestion des langues: utilisation du package babel
+% Option: francais, english
+% Rq: 	Dans le cas d'un document bilingue, la derniere langue indiquée est la langue dominante  
+%	pour changer de langue: \selectlanguage{english}
+
+%\usepackage[francais]{babel}
+\usepackage[spanish,es-uppernames,es-tabla]{babel}
+%\usepackage[francais,english]{babel}
+%\usepackage[english,francais]{babel}
+
+% Definition de macro pour changer de langue
+%\newcommand{\en}{\selectlanguage{english}}
+%\newcommand{\fr}{\selectlanguage{francais}}
+
+
+% Using of vectorial fonts
+\usepackage{lmodern}
+% \usepackage{aeguill} % using adobe font
+
+% Accents managning
+\usepackage[T1]{fontenc} % using Latex font with accents
+\usepackage[utf8]{inputenc} % emphasised character are recognized (or \usepackage[latin1]{inputenc} for os which did not use UTF-8)
+
+
+%%%%%%%%%%%%%%%%
+% Page setting
+%%%%%%%%%%%%%%%%
+
+% Margin definition  (by default write 66 characters per line, for an optimal readability !!!!)
+% Option: 	a4paper
+%		textwidth, textheight
+%		top, bottom, left, right
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=2cm, letterpaper,includehead]{geometry}
+%\usepackage[top=2cm, bottom=2cm, left=3cm, right=2cm, letterpaper]{geometry}
+
+% Style de page: 	empty : le header et le footer sont vide
+%			plain : le header est vide et le footer contient le numero de page
+%			headings : le header contient le numero de page et un titre
+% Changement de style: \thispagestyle{style} et \pagestyle{style}
+%\pagestyle{headings}
+
+
+% Sub figure using
+\usepackage{subfigure}
+
+% Positioning in flotting  (for tables and figures)
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of contents configuration 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inclusion dans la table des matieres, de la liste des figures, des tables, de la bibliographie ...
+% Options : 	nottoc: desactive l'inclusion de la table de matiere
+% 		notlof: desactive l'inclusion de la liste des tables
+%		notlot: desactive l'inclusion de la liste des figures
+%		notbib: desactive l'inclusion de la bibliographie
+%		notindex: desactive l'inclusion de l'index
+%\usepackage[nottoc]{tocbibind}
+
+%%%%%%%%%%%%%%%%%%%%%
+% Link using
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage[%
+    bookmarks         = true,%     % Signets
+    bookmarksnumbered = true,%     % Signets numérotés%
+    bookmarksopen     = true,%	   % Signets ouverts
+    colorlinks        = true,%     % Liens en couleur : true ou false
+    urlcolor          = blue,%     % Couleur des liens externes
+    linkcolor         = black,
+    citecolor         = black,
+    filecolor         = black]{hyperref}%                   % Utilisation de HyperTeX
+
+\usepackage{url}	% for internet link
+
+%%%%%%%%%%%%%%%%%%
+% Other packages
+%%%%%%%%%%%%%%%%%%
+%\usepackage{showframe}
+% Include images
+\usepackage{graphicx}
+
+% Specifies the directory where pictures are stored
+\graphicspath{{img/}} 
+
+% Use the "Natbib" style for the references in the Bibliography
+\usepackage[square, numbers, comma, sort&compress]{natbib}  
+
+% Formate code: C/C++ ,Java ...
+\usepackage{listings}
+
+% Write algorithms
+\usepackage{algorithm,algorithmic}
+
+% Draw figure
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+
+% For symbole like degree
+\usepackage{gensymb}
+
+% Math AMS : enables an advance seeting of the equation, to number it ...
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsmath}
+
+% Draw figure
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usepackage{pst-text}
+\usepackage{pstcol,multido}
+\usepackage{pst-3dplot}
+
+% enable doublespacing
+\usepackage{setspace}
+%\doublespacing
+\onehalfspacing
+\usepackage{indentfirst}
+\usepackage{times}
+%\usepackage{pslatex} %Times font
+
+\usepackage[toc]{glossaries}
+%\usepackage[authordate]{biblatex-chicago}
+%\usepackage[longnamesfirst,nonamebreak]{natbib}
+%\usepackage{natbib}
+
+% Change "Capitulo" to uppercase
+\makeatletter
+\renewcommand{\spanishchaptername}{CAP\'ITULO}
+\makeatother
+
+
+%% ----------------------------------------------------------------
+% Header and footer with the fancyhdr package
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+%\fancyhead{}  % Clears all page headers and footers
+%\rhead{\thepage}  % Sets the right side header to show the page number
+%\lhead{}  % Clears the left side page header
+
+
+
+%\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+%% ----------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%   Document
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%There's a workaround to get table of contents to be clickable so I can navigate through chapters a bit easier as I'm writing.
+ \pdfstringdefDisableCommands{%
+   \let\MakeUppercase\relax
+} 
+
+\definecolor{forestgreen}{rgb}{0.13,0.54,0.13}
+
+
+%% ----------------------------------------------------------------
+
+%  First pages (Cubierta, Caratula)
+\include{src/Portada}
+
+%% ----------------------------------------------------------------
+% Begin Roman style (i, ii, iii, iv...) page numbering
+\frontmatter
+
+%\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+% The Acknowledgements page, for thanking everyone
+\agradecimientos{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+Gracias totales\ldots
+}
+\clearpage  % End of the Acknowledgements
+%% ----------------------------------------------------------------
+
+% The "Funny Quote Page"
+\pagestyle{empty}  % No headers or footers for the following pages
+
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``Whenever you find yourself on the side of the majority, it is time to pause and reflect.''}
+
+\begin{flushright}
+Mark Twain
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Funny Quote page ended, start a new page
+%% ----------------------------------------------------------------
+% The Abstract Page
+%\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+\resumen{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+
+
+}
+\pagestyle{empty}
+\clearpage  % Abstract ended, start a new page
+
+%% ----------------------------------------------------------------
+
+\pagestyle{empty}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+
+%% ----------------------------------------------------------------
+\tableofcontents  % Write out the Table of Contents
+
+%% ----------------------------------------------------------------
+\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\listoftables  % Write out the List of Tables
+
+
+
+
+%% ----------------------------------------------------------------
+\fancyfoot{} % clear all fields
+\fancyhead[RO,LE]{\slshape \leftmark}
+\fancyhead[LO,RE]{\thepage}
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+
+\include{src/Capitulo_1}
+\include{src/Capitulo_2}
+\include{src/Capitulo_3}
+\include{src/Capitulo_4}
+\include{src/Capitulo_5}
+\include{src/Capitulo_6}
+\include{src/Capitulo_7}
+
+%  Appendix
+%\appendix
+%\include{src/appendix}
+
+
+
+%  Bibliography
+\bibliographystyle{plain}
+%\bibliographystyle{chicago}
+%\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+%\bibliographystyle{ieeetr}
+\bibliography{biblio/bibliografia}
+
+\end{document}
+
+
+
+
