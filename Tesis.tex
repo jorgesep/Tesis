@@ -111,6 +111,8 @@
 %\usepackage{showframe}
 % Include images
 \usepackage{graphicx}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
 
 % Specifies the directory where pictures are stored
 \graphicspath{{img/}} 
@@ -124,9 +126,6 @@
 % Write algorithms
 \usepackage{algorithm,algorithmic}
 
-% Draw figure
-\usepackage{pstricks}
-\usepackage{pstricks-add}
 
 % For symbole like degree
 \usepackage{gensymb}
@@ -157,6 +156,7 @@
 %\usepackage[longnamesfirst,nonamebreak]{natbib}
 %\usepackage{natbib}
 
+
 % Change "Capitulo" to uppercase
 \makeatletter
 \renewcommand{\spanishchaptername}{CAP\'ITULO}
@@ -175,7 +175,7 @@
 %\rhead{\thepage}  % Sets the right side header to show the page number
 %\lhead{}  % Clears the left side page header
 
-
+\DeclareMathOperator*{\median}{median}
 
 %\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
@@ -210,6 +210,7 @@
 \agradecimientos{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 Gracias totales\ldots
+%\include{src/Agradecimientos}
 }
 \clearpage  % End of the Acknowledgements
 %% ----------------------------------------------------------------
