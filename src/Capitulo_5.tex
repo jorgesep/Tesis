@@ -3,7 +3,7 @@
 \section{Introducción}
 La solución de software propuesta, es un conjunto de bibliotecas desarrolladas en lenguaje de programación C++ orientado a objetos. Este grupo de bibliotecas de clases posibilitan, por una parte, construir una simple aplicación cliente, que incorpora los algoritmos de visión de computador que se quieren verificar, y por otra parte, evaluar resultados logrados con el cliente proporcionado por este sistema (u otro independiente). Comparando posteriormente, el resultado con las imágenes de referencias, suministrada por el conjunto de datos que esta bajo evaluación. El software proporciona las interfaces necesarias, que simplifican la creación de instancias, de los algoritmos incluidos en el sistema de software. Facilita también, la incorporación de nuevos algoritmos, encapsulando las bibliotecas (de estos algoritmos) en una clase que contiene las operaciones predeterminadas, reconocidas por el sistema de software. 
 
-Otro aspecto importante de esta solución de software, constituye la herramienta de evaluación de desempeño. Ésta fue proyectada, desde un principio, como un cliente que recibe de entrada un conjunto de imágenes procesadas, y otro conjunto de imágenes de referencia (\textit{ground-truth}). La salida es un resumen de desempeño, producto de la comparación de cada imagen. Este diseño, es independiente de la plataforma sobre el cual se ejecuta el algoritmo medido. La evaluación se realiza sobre las imágenes resultantes, previamente procesadas por los algoritmos que se intentan medir. Esta herramienta de software, incluye la serie de métricas más comunes utilizadas en segmentación de imágenes, y un par de métricas relacionadas con la medición de percepción (similaridad estructural o métrica D-Score). El producto final es un archivo de texto, que contiene los resultados obtenidos para cada imagen y un valor acumulado total que informa el desempeño global del algoritmo logrado en toda la secuencia.
+Otro aspecto importante de esta solución de software, constituye la herramienta de evaluación de desempeño. Ésta fue proyectada, desde un principio, como un cliente que recibe de entrada un conjunto de imágenes procesadas, y otro conjunto de imágenes de referencia (\textit{ground-truth}). La salida es un resumen de desempeño, producto de la comparación de cada imagen. Este diseño, es independiente de la plataforma sobre el cual se ejecuta el algoritmo medido. La evaluación se realiza sobre las imágenes resultantes, previamente procesadas por los algoritmos que se intentan medir. Esta herramienta de software, incluye las métricas más comunes utilizadas en segmentación de imágenes, y un par de métricas relacionadas con la medición de percepción: similaridad estructural \cite{park_benchmark_2013, wang_image_2004}, y D-Score\cite{lallier_testing_2011}. El producto final es un archivo de texto, que contiene los resultados obtenidos para cada imagen y un valor acumulado total que informa el desempeño global del algoritmo logrado en toda la secuencia.
 
 
 \begin{figure}[h!]
@@ -54,7 +54,7 @@ OpenCV \cite{opencv} (\textit{Open Source Computer Vision Library}) es una bibli
 \end{figure}
 
 
-La estructura de datos \textit{Mat}, es una clase C++ de n-dimensiones, constituida en dos partes. Tiene un encabezado de la matriz de datos, que contiene información del tamaño de la matriz, el método utilizado para almacenar la matriz, la dirección de memoria donde se encuentra localizada la matriz de datos, entre otro tipo de información. Mantiene también, un puntero de la zona de memoria donde se encuentra la matriz de píxeles, y su dimensionalidad depende del método empleado para almacenar los datos. El encabezado de la matriz es constante, pero el tamaño de la matriz varia dependiendo del tipo de imagen que esta siendo manipulada. La figura \ref{fig:mat} es un ejemplo de esta matriz, la zona demarcada por el rectángulo en rojo es una zona de interés que se desea estudiar. La zona es una matriz de números manejada por la matriz \textit{Mat}, en el caso de una imagen definida en el espacio RGB, se almacenan los valores de cada píxel, en forma contigua, en el orden: blue, green, y red.\\
+La estructura de datos \textit{Mat}, es una clase C++ de n-dimensiones, constituida en dos partes. Tiene un encabezado de la matriz de datos, que contiene información del tamaño de la matriz, el método utilizado para almacenar la matriz, la dirección de memoria donde se encuentra localizada la matriz de datos, entre otro tipo de información. Mantiene también, un puntero de la zona de memoria donde se encuentra la matriz de píxeles, y su dimensionalidad depende del método empleado para almacenar los datos. El encabezado de la matriz es constante, pero el tamaño de la matriz varia dependiendo del tipo de imagen que esta siendo manipulada. La figura \ref{fig:mat} es un ejemplo de esta matriz, la zona demarcada por el rectángulo en rojo es una zona de interés que se desea estudiar. La zona es una matriz de números manejada por la matriz \textit{Mat}, en el caso de una imagen definida en el espacio RGB, se almacenan los valores de cada píxel, en forma contigua, en el orden: blue, green, y red. Las líneas de códigos que se indican a continuación, es un ejemplo de la facilidad de uso de la estructura de datos \textit{Mat}.\\
 
 
 \begin{lstlisting}
@@ -69,4 +69,38 @@ Boost \cite{boost} se ha usado principalmente para, evitar el problema que se en
 
 
 \subsection{Descripción de sistemas de software}
-La segunda capa del sistema de software implementado, está compuesto por dos módulos principales e independientes. El primero corresponde a un \textit{Framework} de software que incorpora los algoritmos que requieren ser evaluados. El segundo módulos es una programa que efectúa evaluación de desempeño de los resultados obtenidos por los algoritmos. 
+La segunda parte de la implementación de este sistema, de acuerdo con el esquema de la figura \ref{fig:arq_software}, está compuesto por dos módulos principales e independientes. El módulo de \textit{Framework} que permite incorporar y verificar los diferentes algoritmos, y el módulo que incluye diferentes métricas de evaluación de desempeño. Como señala el diagrama de componentes (operación), la figura \ref{fig:bgs_tasks}, los módulos son independientes y funcionan en tiempos diferentes. La salida del primero, es la entrada del segundo.
+
+\subsubsection{Framework de algoritmos}
+
+La entrada de este \textit{framework} puede ser un archivo de video o  conjunto de imágenes secuenciales en cualquier formato (jpg, png, etc). Su salida son mascaras de siluetas (\textit{foreground}), generadas por el algoritmo seleccionado. Los resultados (mascaras) son almacenados en directorios independientes, (se crea un directorio por algoritmo configurado). De esta manera, se podrían ejecutar uno o más algoritmos en forma simultánea, dependiendo de un archivo \textit{xml} general de configuración. La configuración de cada uno de los algoritmos incluidos, también se realiza a través de archivos XML de configuración. Por cada algoritmo incluido en este \textit{framework} existe un archivo XML de configuración. Los archivos XML contienen parámetros necesarios que necesita el algoritmo para ser ajustado a los requerimientos de operación, entre estos se encuentran por ejemplo, la tasa de aprendizaje, valores por defecto de las distribuciones que modelan el fondo de imagen. 
+
+
+\subsubsection{Diagrama de clases}
+Se ha utilizado un patrón de diseño \cite{gamma_design_1995} \textbf{estrategia} (\textit{Strategy}) para implementar el \textit{framework} que da soporte a los distintos algoritmos.  Los patrones de diseño\cite{gamma_design_1995} son esencialmente un conjunto de soluciones a problemas repetitivos que se encuentran en el desarrollo de software. Utilizar un patrón de diseño es aprovechar la experiencia para enfrentar un problema conocido, re-usando una solución ya comprobada. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/BGSFramework}
+\caption[Diagrama UML de clases Framework]{Diagrama UML de clases del framework de algoritmos}
+\label{fig:uml_framework}
+\end{figure}
+
+El patrón de diseño estrategia, en este caso, se usa para encapsular los algoritmos y hacerlos intercambiables, al ser invocados por algún cliente en tiempo de ejecución. Se basa en la idea de encapsular el comportamiento de la parte que cambia. Aprovecha la propiedad de ``polimorfismo'' en programación orientada a objetos, para definir una interfaz común, sobre la cual los diferentes ``comportamientos'' (algoritmos) son implementados. Como se muestra en la figura \ref{fig:uml_framework} se define una interfaz (clase abstracta en C++) para representar el comportamiento (\textit{IBGSFramework}) que se desea encapsular. Los distintos algoritmos son implementados como subclases de esta interfaz: \textit{SAGMMBuilder}, \textit{MOG2Builder}, \textit{NPBuilder}. Con este diseño, los algoritmos no están incluidos en la clase principal \textit{Framework}. Otros objetos podrían también hacer uso de \textit{IBGSFramework}, debido que no esta incorporada con la clase principal \textit{Framework}. Además, se pueden agregar más algoritmos (comportamientos) sin modificar las clases existentes o la clase principal.
+
+Las clases \textit{SAGMMBuilder}, \textit{MOG2Builder}, \textit{NPBuilder} (figura \ref{fig:uml_framework}) funcionan como clases especiales que crean las instancias de los algoritmos, hacen una abstracción de cada algoritmo exponiendo únicamente las operaciones esenciales que se necesitan en al framework.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/Sequence}
+\caption[Diagrama de secuencia]{Diagrama de secuencia de ejecución de un algoritmo}
+\label{fig:uml_sequence}
+\end{figure}
+
+
+El diagrama de secuencia de la figura \ref{fig:uml_sequence} muestra un ejemplo de los mensajes que son intercambiados entre un cliente, el \textit{framework} y un algoritmo. El cliente inicia enviando un mensaje al objeto \textit{framework} para indicar el tipo de algoritmo a utilizar. Luego, el cliente pide configurar, esto activa un mensaje desde el \textit{framework} hacia el algoritmo señalado, en el paso anterior. En la parte de inicialización se configura el algoritmo con parámetros por defecto. Finalmente, el cliente envía un mensaje de ``update'' que significa obtener una nueva mascara de foreground.
+
+
+\subsubsection{Herramienta de evaluación}
+Este módulo es una clase que define en cada una de  programa principal, que 
