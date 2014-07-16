@@ -1,17 +1,17 @@
-\chapter{Introducción}
+\chapter{Introducción}\label{chap:capitulo_1}
 \section{Antecedentes y motivación}
 \indent Visión por computador es una disciplina que intenta emular las capacidades de la visión humana para identificar y clasificar diferentes objetos desde una imagen. Es un área de investigación muy amplia, que se entrelaza con diferentes campos de investigación en el ámbito de las ciencias de la computación y el desarrollo tecnológico. Tiene como desafío facilitar máquinas computacionales con capacidad de percepción humana, en otras palabras comprender el medio ambiente, tomar acciones, aprendizaje, y mejorar desempeño de acciones tomadas. Visión por computador intenta hacer una descripción del mundo que los seres humanos pueden observar, a través de imágenes para hacer una reconstrucción de sus principales propiedades.
 
-\indent Hay en el último tiempo un constante desarrollo de nuevas técnicas y aparatos tecnológicos, que incorporan algoritmos empleados en visión por computador, en heterogéneos campos de aplicación. Se está experimentando algoritmos inteligentes en vehículos que permiten evitar obstáculos, reconocer peatones o viajar de un punto a otro sin la intervención de un conductor. En dispositivos audiovisuales, como cámaras fotográficas digitales, algoritmos de reconocimiento de figuras y rostros es una característica normal incluida en estos artefactos. Se utilizan además, las técnicas de análisis y reconocimiento de patrones en imágenes médicas, o clasificación de acciones humanas en cámaras de vigilancia, entre muchas otras aplicaciones.
+\indent Hay en el último tiempo un constante desarrollo de nuevas técnicas y aparatos tecnológicos (figura \ref{fig:aplicaciones_vision_por_computador}), que incorporan algoritmos empleados en visión por computador, en heterogéneos campos de aplicación. Se está experimentando algoritmos inteligentes en vehículos que permiten evitar obstáculos, reconocer peatones o viajar de un punto a otro sin la intervención de un conductor. En dispositivos audiovisuales, como cámaras fotográficas digitales, algoritmos de reconocimiento de figuras y rostros es una característica normal incluida en estos artefactos. Se utilizan además, las técnicas de análisis y reconocimiento de patrones en imágenes médicas, o clasificación de acciones humanas en cámaras de vigilancia, entre muchas otras aplicaciones.
 
 
 \begin{figure}
 \centering     %%% not \center
-\subfigure[Evitar obstáculos]{\label{fig:Figure_A}\includegraphics[width=50mm]{img/MobileEyemaster}}
-\subfigure[Reconocimiento de vehículos]{\label{fig:Figure_B}\includegraphics[width=50mm]{img/self-driving-cars}}
-\subfigure[Reconocimiento de peatones]{\label{fig:Figure_C}\includegraphics[width=50mm]{img/crossing}}
-\subfigure[Experimentación con vehículos autónomos \tiny{(Figure courtesy Google \copyright )}]{\label{fig:Figure_D}\includegraphics[width=50mm]{img/Google500KmilesLexus}}
-\subfigure[Reconocimiento de caras \tiny{(http://www.netmechanic.co.za/ \copyright)}]{\label{fig:Figure_E}\includegraphics[width=50mm]{img/face_recognition_technology}}
+\subfigure[Evitar obstáculos]{\label{fig:Figure_A}\includegraphics[width=50mm]{img/ch1/MobileEyemaster}}
+\subfigure[Reconocimiento de vehículos]{\label{fig:Figure_B}\includegraphics[width=50mm]{img/ch1/self-driving-cars}}
+\subfigure[Reconocimiento de peatones]{\label{fig:Figure_C}\includegraphics[width=50mm]{img/ch1/crossing}}
+\subfigure[Experimentación con vehículos autónomos \tiny{(Figure courtesy Google \copyright )}]{\label{fig:Figure_D}\includegraphics[width=50mm]{img/ch1/Google500KmilesLexus}}
+\subfigure[Reconocimiento de caras \tiny{(http://www.netmechanic.co.za/ \copyright)}]{\label{fig:Figure_E}\includegraphics[width=50mm]{img/ch1/face_recognition_technology}}
 \caption[Aplicaciones en visión por computador]{Imagenes de aplicaciones en visión por computador }
 \label{fig:aplicaciones_vision_por_computador}
 \end{figure}
@@ -23,7 +23,7 @@
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[scale=0.5]{img/generic_block_diagram_computer_vision}
+      \includegraphics[scale=0.5]{img/ch1/generic_block_diagram_computer_vision}
   \caption[Diagrama de bloques etapas visión por computador]{Diagrama de bloques genérico de las diferentes etapas en visión por computador}
 \label{fig:etapas_vision_computador}
 \end{figure}
@@ -120,11 +120,17 @@ El resultado será un prototipo que puede constituir la base para el desarrollo 
 
 \section{Resultados obtenidos}
 
-\textcolor{red}{Falta definir los resultados obtenidos}
+Este trabajo de tesis presenta los siguientes resultados 
+\begin{itemize}
+\item Un sistema de software base, implementado en lenguaje de programación C++, que permite agregar y utilizar algoritmos de sustracción de imágenes de fondo usados comunmente en el área de visión por computador.
+\item Implementación de un algoritmo de basado en mixtura de componente gaussianos, denominado `\textit{Self-Adaptive Gaussian Mixture Model}'  (\textit{SAGMM}).
+\item Implementación de una herramienta de software que permite hacer evaluación de desempeño de los resultados obetnidos por algoritmos de sustracción de imágenes de fondo, empleando las métricas más comunes en evaluación de rendimiento.
+\item Generación y publicación de siluetas resultantes, utilizando \textit{SAGMM}, de todas las secuencias del conjunto de datos MuHAVI.
+\end{itemize}
 
 \section{Organización del documento}
 
-El primer capítulo de este trabajo de titulación se presenta el proyecto a desarrollar, se menciona el alcance, objetivo general, y lo objetivos específicos necesarios para lograr el objetivo general. Se detalla las herramientas necesarias para construir el proyecto, finalmente se hace una breve descripción de la solución propuesta. En segundo capítulo se hace una revisión bibliográfica de los principales temas abordados en la tesis. Se detalla el estado actual de los métodos de sustracción de fondo en la comunidad de investigación en visión por computador, especialmente en los métodos de modelado estadístico. Se mencionan las métricas más utilizadas para evaluar segmentación de imágenes y clasificación de actividades, también se hace una breve mención de los distintos conjunto de datos construidos especialmente para evaluación de algoritmos de detección de actividades. El tercer capítulo se dedica exclusivamente a describir los algoritmos implementados en este trabajo de tesis, se detalla el algoritmo de sustracción de fondo usando mixtura de componentes Gaussianas. El cuarto capítulo se dedica a mencionar las herramientas, los criterios y las decisiones para llevar a cabo este trabajo de tesis. Se describe también a nivel de bloques las distintas implementaciones de software realizadas, se presentan diagramas UML de paquetes y clases de los sistemas implementados. El quinto capítulo, se detalla el resultado de las experimentaciones, y sus análisis, se muestran también las curvas características de resultados. Finalmente el capítulo de las conclusiones, proporciona una idea del resultado general, se hacen las comparaciones de los diferentes algoritmos y se indican los posibles trabajos futuros que se podrían abordar a partir de este trabajo.
+El primer capítulo de este trabajo de titulación se presenta el proyecto a desarrollar, se menciona el alcance, objetivo general, y lo objetivos específicos necesarios para lograr el objetivo general. Se detalla las herramientas necesarias para construir el proyecto, finalmente se hace una breve descripción de la solución propuesta. En segundo capítulo se hace una revisión bibliográfica de los principales temas abordados en la tesis. Se detalla el estado actual de los métodos de sustracción de fondo en la comunidad de investigación en visión por computador, especialmente en los métodos de modelado estadístico. Se mencionan las métricas más utilizadas para evaluar segmentación de imágenes y clasificación de actividades, también se hace una breve mención de los distintos conjunto de datos construidos especialmente para evaluación de algoritmos de detección de actividades. El tercer capítulo se dedica exclusivamente a describir los algoritmos implementados en este trabajo de tesis, se detalla el algoritmo de sustracción de fondo usando mixtura de componentes Gaussianas. El capítulo cuarto describe los métodos empleados para evaluar calidad, y se hace diferencia entre métodos de evaluación subjetiva y objetiva. El quinto capítulo se dedica a mencionar las herramientas, los criterios y las decisiones para llevar a cabo este trabajo de tesis. Se describe también a nivel de bloques las distintas implementaciones de software realizadas, se presentan diagramas UML de paquetes y clases de los sistemas implementados. El sexto capítulo, detalla el resultado de las experimentaciones, y sus análisis, se muestran también las curvas características de resultados. Se agrega un apéndice con gráficas de los resultados obtenidos separados por  por algoritmo. Finalmente el capítulo de las conclusiones, proporciona una idea del resultado general, se hacen las comparaciones de los diferentes algoritmos y se indican los posibles trabajos futuros que se podrían abordar a partir de este trabajo.
 
 
 

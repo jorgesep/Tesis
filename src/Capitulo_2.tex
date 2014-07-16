@@ -1,4 +1,4 @@
-\chapter{Estado del Arte}
+\chapter{Estado del Arte}\label{chap:estado_del_arte}
 
 
 \indent Los algoritmos de sustracción de fondo (``\textit{Background Subtraction Algorithms}'') modelan esencialmente el segundo plano (``\textit{Background}'') de una imagen con la finalidad de detectar movimiento de objetos (''\textit{Foreground}'') en una secuencia de video. Aplicaciones como vigilancia a través de video, detección de movimiento y clasificación de acciones, necesitan primero modelar la imagen de fondo y luego detectar los objetos móviles.
@@ -21,6 +21,7 @@ Una aproximación similar es el trabajo de \textit{Stauffer} y \textit{Grimson}\
 
 \indent En el contexto de un sistema de detección, clasificación y seguimiento de vehículos \cite{chen_vehicle_2012} en ciudad,  Zezhi Chen \cite{chen_self-adaptive_2011} (2011) menciona como desventajas, en una mixtura de Gaussianas, la sensibilidad a los cambios bruscos de iluminación, e identificación de sombras móviles producidas por vehículos dentro de una escena. Comenta además, el inconveniente de éste modelo en el uso intensivo de recursos computacionales y el cuidado que requieren la sintonización de sus parámetros. Propone un modelo de mixtura Gaussianas auto-adaptativo, el cual consiste en una mejora del método de \textit{Zivkovic} y \textit{Heijden} \cite{zivkovic_efficient_2006}. Introduce un procedimiento para obtener un factor numérico que determina los cambios en la iluminación global. Este procedimiento se basa en un estudio comparativo de algoritmos que corrigen cambios de intensidad global \cite{withagen_intensity_2010}. Combina el factor de iluminación y un registro de actualización de las mixturas para mejorar tasa de aprendizaje, convirtiéndola en una tasa dinámica que mitiga los cambios bruscos de iluminación global. Propone también un filtro espacial y temporal \cite{chen_background_2009} para abordar los problemas de ruido y vibración en las cámaras. La tasa de aprendizaje dinámica propuesta logra buena estimación de la media y varianza en caso de fondos que cambian rápidamente. En caso contrario, la tasa dinámica se aproxima a la constante de aprendizaje original\cite{zivkovic_efficient_2006}.
 
+\indent Incluir el algoritmo \textit{Mixtura de Gaussianas} en un micro-controlador es el desafío que abordan \textit{Salvadori y Petracca} \cite{salvadori_gaussian_2012} en un trabajo del año 2012. Ellos usan este método en procesadores de bajo consumo, bajo costo, y sin procesamiento en punto flotante. Para reducir el uso de memoria y el costo de computación, hacen una aproximación en la precisión de números enteros. Crean nuevas reglas de actualización de los parámetros que modelan las componentes Gaussianas de este método, hacen una definición de un operador de redondeo para actualizar los valores medio y de varianza de los componentes, que emulan la actualización de parámetros del método original. Los pesos que determinan la pertenencia de un componente Gaussiano al fondo de una imagen son representados por contadores. Localizan los tres parámetros definido para cada gaussiana en un número fijo de bits en un conjunto de 4 bytes, e incrementan estos contadores en función de la actualización de estos parámetros. Esta aproximación crea restricciones con el número del factor de aprendizaje, determinadas por los valores mínimos de la varianza y valor medio.
 
 \indent Un método más flexible para tratar con fondos de imagen dinámicos; fluctuaciones de cámaras, movimientos de las hojas de un árbol, etc. Es el algoritmo de estimación de fondo no-paramétrico propuesto por \textit{Elgammal et al.} \cite{elgammal_nonparametricmodel_2000}. Plantea modelar la función de probabilidad mediante el uso de un ``Kernel'' normal Gaussiano. Este modelo no requiere seleccionar el número de componentes Gaussianas, estiman la función de kernel usando información de historia reciente, con el propósito de capturar cambios rápido en una escena. Sin embargo, una de las mayores desventajas de este modelo, está relacionado con el costo computacional, éste requiere mantener en memoria varios cuadros de una secuencia.
 
@@ -40,16 +41,45 @@ Una aproximación similar es el trabajo de \textit{Stauffer} y \textit{Grimson}\
 
 \section{Conjunto de datos}
 
-\indent Se encuentran disponibles en Internet una amplia variedad de conjuntos de imágenes, para ser utilizados como base de evaluación y comparación de nuevos métodos, en las diferentes áreas visión por computador. Estas base de datos, dependiendo de la realidad, facilitan secuencias en diferentes condiciones y conjuntos más elaborados proporcionan imágenes anotadas (\textit{metadata}). Por ejemplo, existen base de datos de peatones \cite{piotr_pedestrian_2012, ess_depth_2007} para ser usadas en sistemas de asistencia a la conducción de vehículos o sistemas de protección a peatones. Otras como Mobo (\textit{CMU Motion of Body}) \cite{gross_cmu_2001}, creada para investigar la forma de caminar de los seres humanos, lo cual permitiría evaluar algoritmos que permitan identificar a las personas por la forma de caminar.
+\indent Se encuentran disponibles en Internet una amplia variedad de conjunto de imágenes, para ser utilizados como base de evaluación y comparación de nuevos métodos, en las diferentes áreas visión por computador. Estas base de datos, dependiendo de la realidad, facilitan secuencias en diferentes condiciones y conjuntos más elaborados proporcionan imágenes anotadas (\textit{metadata}). Por ejemplo, existen base de datos de peatones \cite{piotr_pedestrian_2012, ess_depth_2007} para ser usadas en sistemas de asistencia a la conducción de vehículos o sistemas de protección a peatones. Otras como Mobo (\textit{CMU Motion of Body}) \cite{gross_cmu_2001}, creada para investigar la forma de caminar de los seres humanos, lo cual permitiría evaluar algoritmos que permitan identificar a las personas por la forma de caminar.
 
-Para clasificación de acciones humanas, existen en la literatura varios conjuntos estándar. KTH \cite{schuldt_recognizing_2004} es un conjunto de seis acciones humanas diferentes entre ellas, ejecutadas por 25 actores en cuatro ambientes distintos: interior, exterior, exterior con diferentes escalas, exterior con diferentes prendas de vestir. Fue introducida para evaluación de reconocimiento de acciones usando mediciones locales de puntos de interés espacio-temporal (\textit{spatiotemporal interest points - STIPs}). Contiene 598 secuencias de vídeos y 2391 acciones. Cada vídeo tiene un promedio de cuatro segundos de duración.
+Para clasificación de acciones humanas, existen en la literatura varios conjuntos estándar. KTH \cite{schuldt_recognizing_2004} es un conjunto de seis acciones humanas diferentes entre ellas, ejecutadas por 25 actores, con una cámara estática (25 cuadros/segundo), en cuatro ambientes distintos: interior, exterior, exterior con diferentes escalas, exterior con diferentes prendas de vestir. Fue introducida para evaluación de reconocimiento de acciones usando mediciones locales de puntos de interés espacio-temporal (\textit{spatiotemporal interest points - STIPs}). Contiene 598 secuencias de vídeos y 2391 acciones. Cada vídeo tiene un promedio de cuatro segundos de duración.
 
-El conjunto de datos Weizman \cite {gorelick_actions_2007}, fue construido para comprobar robustez de un método detección y clasificación de acciones humanas utilizando el concepto volumen espacio-tiempo. Consiste de 90 secuencias de baja resolución, diez acciones distintas ejecutadas por nueve actores en diferentes escenarios y imagen de fondo. Las imágenes son capturadas por una cámara estática localizada frente a estos actores. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/ch2/KTH}
+\caption[KTH Dataset]{Conjunto de Datos KTH, desarrolla seis actividades humanas ejecutadas por 25 actores en cuatro diferentes ambientes, facilitando 2391 acciones en 598 secuencias}
+\label{fig:kth}
+\end{figure}
 
-MuHAVi \cite{singh_muhavi_2010} Es un gran conjunto de acciones humanas recolectados desde ocho ubicaciones diferentes (8 camaras), en un escenario irregular emulando iluminación nocturna de la calle. Contiene 17 clases diferentes de actividades, ejecutado por 14 actores. INRIA XMAS \cite{weinland_free_2006} muy similar a MuHAVI \cite{singh_muhavi_2010}, se compone de 11 actividades cotidianas, por ejemplo, mirar la hora, darse vuelta, o caminar, entre otras. Cada acción es ejecutada en tres oportunidades por dize actores, cinco hombres y cinco mujeres. Una de las característica de este conjunto, se refiere que la posición y dirección de las actividades son realizadas en forma libre por los actores, de esta manera se logra que las actividades sean invariante a la vista (\textit{view-invariance}). 
 
 
+El conjunto de datos Weizmann \cite {gorelick_actions_2007} (ver figura \ref{fig:weizmann}), fue construido para comprobar robustez de un método detección y clasificación de acciones humanas utilizando el concepto volumen espacio-tiempo. Consiste de 90 secuencias de baja resolución, diez acciones distintas ejecutadas por nueve actores en diferentes escenarios y imagen de fondo. Las imágenes son capturadas por una cámara estática localizada frente a estos actores. 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/ch2/Weizmann}
+\caption[Weizmann Dataset]{Conjunto de Datos Weizmann consiste en diez acciones realizadas por nueve actores}
+\label{fig:weizmann}
+\end{figure}
+
+
+MuHAVi \cite{singh_muhavi_2010} Es un conjunto de acciones humanas recolectados desde ocho ubicaciones diferentes (8 camaras), en un escenario irregular emulando iluminación nocturna de la calle. Contiene 17 clases diferentes de actividades, ejecutado por 14 actores (figura \ref{fig:muhavi}). INRIA XMAS \cite{weinland_free_2006} (figura \ref{fig:ixmas}) muy similar a MuHAVI \cite{singh_muhavi_2010}, se compone de 11 actividades cotidianas, por ejemplo, mirar la hora, darse vuelta, o caminar, entre otras. Cada acción es ejecutada en tres oportunidades por dies actores, cinco hombres y cinco mujeres. Una de las característica de este conjunto, se refiere que la posición y dirección de las actividades son realizadas en forma libre por los actores, de esta manera se logra que las actividades sean invariante a la vista (\textit{view-invariance}). 
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/ch2/ixmas}
+\caption[IXMAS Dataset]{Conjunto de Datos IXMAS, es un ejemplo de 11 actividades cotidianas elaborada con diez actores}
+\label{fig:ixmas}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{img/ch2/MuHAVI}
+\caption[MuHAVI Dataset]{Conjunto de Datos MuHAVI, son 7 actores desarrollando 17 acciones diferentes en un escenario simulando ilumanción nocturna.}
+\label{fig:muhavi}
+\end{figure}
 
 
 

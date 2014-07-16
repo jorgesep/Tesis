@@ -1,0 +1,293 @@
+\begin{thebibliography}{10}
+
+\bibitem{benezeth_review_2008}
+Y.~Benezeth, P.-M. Jodoin, B.~Emile, H.~Laurent, and C.~Rosenberger.
+\newblock Review and evaluation of commonly-implemented background subtraction
+  algorithms.
+\newblock In {\em Pattern Recognition, 2008. {ICPR} 2008. 19th International
+  Conference on}, pages 1--4, 2008.
+
+\bibitem{boost}
+boost.
+\newblock Boost c++ libraries, 2013.
+
+\bibitem{bouwmans_recent_2011}
+T.~Bouwmans.
+\newblock Recent advanced statistical background modeling for foreground
+  detection: A systematic survey.
+\newblock {\em Recent Patents on Computer Science}, 4(3), 2011.
+
+\bibitem{brand_structure_199}
+Matthew Brand.
+\newblock Structure learning in conditional probability models via an entropic
+  prior and parameter extinction.
+\newblock {\em Neural Computation}, 11(5):1155--1182, 1999.
+
+\bibitem{brutzer_evaluation_2011}
+S.~Brutzer, B.~Hoferlin, and G.~Heidemann.
+\newblock Evaluation of background subtraction techniques for video
+  surveillance.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2011 {IEEE}
+  Conference on}, page 1937–1944. {IEEE}, June 2011.
+
+\bibitem{cavallaro_objective_2002}
+A.~Cavallaro, {E.D.} Gelasca, and T.~Ebrahimi.
+\newblock Objective evaluation of segmentation quality using spatio-temporal
+  context.
+\newblock In {\em Image Processing. 2002. Proceedings. 2002 International
+  Conference on}, volume~3, pages III--301--III--304 vol.3, 2002.
+
+\bibitem{chen_self-adaptive_2011}
+Z.~Chen and T.~Ellis.
+\newblock Self-adaptive gaussian mixture model for urban traffic monitoring
+  system.
+\newblock In {\em Computer Vision Workshops (ICCV Workshops), 2011 IEEE
+  International Conference on}, pages 1769--1776, 2011.
+
+\bibitem{chen_vehicle_2012}
+Zezhi Chen, T.~Ellis, and {S.A.} Velastin.
+\newblock Vehicle detection, tracking and classification in urban traffic.
+\newblock In {\em Intelligent Transportation Systems (ITSC), 2012 15th
+  International {IEEE} Conference on}, pages 951 --956, September 2012.
+
+\bibitem{chen_background_2009}
+Zezhi Chen, Nick Pears, Michael Freeman, and Jim Austin.
+\newblock Background subtraction in video using recursive mixture models,
+  spatio-temporal filtering and shadow removal.
+\newblock In George Bebis, Richard~D. Boyle, Bahram Parvin, Darko Koracin,
+  Yoshinori Kuno, Junxian Wang, Renato Pajarola, Peter Lindstrom, André
+  Hinkenjann, Miguel~L. Encarnação, Cláudio~T. Silva, and Daniel~S. Coming,
+  editors, {\em ISVC (2)}, volume 5876 of {\em Lecture Notes in Computer
+  Science}, pages 1141--1150. Springer, 2009.
+
+\bibitem{dempster_maximum_1977}
+A.~P. Dempster, N.~M. Laird, and D.~B. Rubin.
+\newblock Maximum likelihood from incomplete data via the em algorithm.
+\newblock {\em JOURNAL OF THE ROYAL STATISTICAL SOCIETY, SERIES B},
+  39(1):1--38, 1977.
+
+\bibitem{piotr_pedestrian_2012}
+Piotr Doll\'ar, Christian Wojek, Bernt Schiele, and Pietro Perona.
+\newblock Pedestrian detection: An evaluation of the state of the art.
+\newblock {\em PAMI}, 34, 2012.
+
+\bibitem{duda_pattern_2000}
+Richard~O. Duda, Peter~E. Hart, and David~G. Stork.
+\newblock {\em Pattern Classification (2Nd Edition)}.
+\newblock Wiley-Interscience, 2000.
+
+\bibitem{elgammal_nonparametricmodel_2000}
+Ahmed~M. Elgammal, David Harwood, and Larry~S. Davis.
+\newblock Non-parametric model for background subtraction.
+\newblock In {\em Proceedings of the 6th European Conference on Computer
+  Vision-Part II}, ECCV '00, pages 751--767, London, UK, UK, 2000.
+  Springer-Verlag.
+
+\bibitem{ess_depth_2007}
+A.~Ess, B.~Leibe, and L.~Van~Gool.
+\newblock Depth and appearance for mobile scene analysis.
+\newblock In {\em Computer Vision, 2007. ICCV 2007. IEEE 11th International
+  Conference on}, pages 1--8, 2007.
+
+\bibitem{fawcett_roc_analysis_2006}
+Tom Fawcett.
+\newblock An introduction to roc analysis.
+\newblock {\em Pattern Recogn. Lett.}, 27(8):861--874, June 2006.
+
+\bibitem{figueiredo_unsupervised_2002}
+Mario A~T Figueiredo and A.K. Jain.
+\newblock Unsupervised learning of finite mixture models.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 24(3):381--396, 2002.
+
+\bibitem{friedman_image_1997}
+Nir Friedman and Stuart Russell.
+\newblock Image segmentation in video sequences: A probabilistic approach.
+\newblock In {\em Proceedings of the Thirteenth Conference on Uncertainty in
+  Artificial Intelligence}, {UAI'97}, page 175–181, San Francisco, {CA},
+  {USA}, 1997. Morgan Kaufmann Publishers Inc.
+
+\bibitem{furht_handbook_2003}
+Borko Furht and Oge Marques.
+\newblock {\em Handbook of Video Databases: Design and Applications (pp.
+  1041-1078)}.
+\newblock {CRC} Press, Inc., Boca Raton, {FL}, {USA}, 1 edition, 2003.
+
+\bibitem{gamma_design_1995}
+Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
+\newblock {\em Design Patterns: Elements of Reusable Object-oriented Software}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1995.
+
+\bibitem{github}
+GitHub.
+\newblock Build software better, together, 2013.
+
+\bibitem{digital_image_processing_gonzalez}
+Rafael~C. Gonzalez and Richard~E. Woods.
+\newblock {\em Digital Image Processing}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2nd
+  edition, 2001.
+
+\bibitem{gorelick_actions_2007}
+Lena Gorelick, Moshe Blank, Eli Shechtman, Michal Irani, and Ronen Basri.
+\newblock Actions as space-time shapes.
+\newblock {\em {IEEE} Trans. Pattern Anal. Mach. Intell.}, 29(12):2247–2253,
+  December 2007.
+
+\bibitem{gross_cmu_2001}
+Ralph Gross and Jianbo Shi.
+\newblock The {CMU} motion of body {MoBo} database.
+\newblock Technical report, 2001.
+
+\bibitem{herrero_background_2009}
+Sonsoles Herrero and Jesús Bescós.
+\newblock Background subtraction techniques: Systematic evaluation and
+  comparative analysis.
+\newblock In Jacques Blanc-Talon, Wilfried Philips, Dan Popescu, and Paul
+  Scheunders, editors, {\em Advanced Concepts for Intelligent Vision Systems},
+  volume 5807 of {\em Lecture Notes in Computer Science}, pages 33--42.
+  Springer Berlin Heidelberg, 2009.
+
+\bibitem{horprasert_astatistical_1999}
+Thanarat Horprasert, David Harwood, and Larry~S. Davis.
+\newblock A statistical approach for real-time robust background subtraction
+  and shadow detection.
+\newblock pages 1--19, 1999.
+
+\bibitem{opencv}
+itseez.
+\newblock Open source computer vision, 2013.
+
+\bibitem{lallier_testing_2011}
+C.~Lallier, E.~Reynaud, L.~Robinault, and L.~Tougne.
+\newblock A testing framework for background subtraction algorithms comparison
+  in intrusion detection context.
+\newblock In {\em Advanced Video and Signal-Based Surveillance (AVSS), 2011 8th
+  IEEE International Conference on}, pages 314--319, 2011.
+
+\bibitem{liu_metrics_2011}
+Leyuan Liu and Nong Sang.
+\newblock Metrics for objective evaluation of background subtraction
+  algorithms.
+\newblock In {\em Image and Graphics (ICIG), 2011 Sixth International
+  Conference on}, pages 562--565, 2011.
+
+\bibitem{confidence_bands_macskassy_2004}
+Sofus~A. Macskassy and Foster~J. Provost.
+\newblock Confidence bands for roc curves: Methods and an empirical study.
+\newblock In José Hernández-Orallo, César Ferri, Nicolas Lachiche, and
+  Peter~A. Flach, editors, {\em ROCAI}, pages 61--70, 2004.
+
+\bibitem{matplotlib}
+matplotlib.
+\newblock matplotlib is a python 2d plotting library, October 2013.
+
+\bibitem{mckoen_evaluation_2000}
+K.~{McKoen}, R.~Navarro-Prieto, B.~Duc, E.~Durucan, F.~Ziliani, and
+  T.~Ebrahimi.
+\newblock Evaluation of video segmentation methods for surveillance
+  applications.
+\newblock In {\em Proc. European Signal Processing Conference}, Tampere,
+  Finland, 2000.
+
+\bibitem{mclachlan_finite_2000}
+G.~J. McLachlan and D.~Peel.
+\newblock {\em Finite mixture models}.
+\newblock Wiley Series in Probability and Statistics, New York, 2000.
+
+\bibitem{prati_detecting_2003}
+A.~Prati, I.~Mikic, {M.M.} Trivedi, and R.~Cucchiara.
+\newblock Detecting moving shadows: algorithms and evaluation.
+\newblock {\em Pattern Analysis and Machine Intelligence, {IEEE} Transactions
+  on}, 25(7):918--923, 2003.
+
+\bibitem{salvadori_gaussian_2012}
+Claudio Salvadori, Dimitrios Makris, Matteo Petracca, Jesus Martinez-del
+  Rincon, and Sergio Velastin.
+\newblock Gaussian mixture background modelling optimisation for
+  micro-controllers.
+\newblock In George Bebis, Richard Boyle, Bahram Parvin, Darko Koracin,
+  Charless Fowlkes, Sen Wang, Min-Hyung Choi, Stephan Mantler, Jürgen Schulze,
+  Daniel Acevedo, Klaus Mueller, and Michael Papka, editors, {\em Advances in
+  Visual Computing}, volume 7431 of {\em Lecture Notes in Computer Science},
+  pages 241--251. Springer Berlin Heidelberg, 2012.
+
+\bibitem{schuldt_recognizing_2004}
+Christian Schüldt, Ivan Laptev, and Barbara Caputo.
+\newblock Recognizing human actions: A local {SVM} approach.
+\newblock In {\em In Proc. {ICPR}}, page 32–36, 2004.
+
+\bibitem{singh_muhavi_2010}
+Sanchit Singh, Sergio~A. Velastin, and Hossein Ragheb.
+\newblock {MuHAVi:} a multicamera human action video dataset for the evaluation
+  of action recognition methods.
+\newblock In {\em Proceedings of the 2010 7th {IEEE} International Conference
+  on Advanced Video and Signal Based Surveillance}, {AVSS} '10, page 48–55,
+  Washington, {DC}, {USA}, 2010. {IEEE} Computer Society.
+
+\bibitem{stauffer_adaptive_1999}
+Chris Stauffer and W.~Eric~L. Grimson.
+\newblock Adaptive background mixture models for real-time tracking.
+\newblock In {\em Computer Vision and Pattern Recognition}, volume~2, page
+  2246–2252, 1999.
+
+\bibitem{toyama_wallflower_1999}
+K.~Toyama, J.~Krumm, B.~Brumitt, and B.~Meyers.
+\newblock Wallflower: principles and practice of background maintenance.
+\newblock In {\em Computer Vision, 1999. The Proceedings of the Seventh {IEEE}
+  International Conference on}, volume~1, pages 255--261 vol.1, 1999.
+
+\bibitem{park_benchmark_2013}
+Antoine Vacavant, Thierry Chateau, Alexis Wilhelm, and Laurent Lequièvre.
+\newblock A benchmark dataset for outdoor {Foreground/Background} extraction.
+\newblock In Jong-Il Park and Junmo Kim, editors, {\em Computer Vision - {ACCV}
+  2012 Workshops}, volume 7728 of {\em Lecture Notes in Computer Science},
+  pages 291--300. Springer Berlin Heidelberg, 2013.
+
+\bibitem{villegas_perceptually-weighted_2004}
+P.~Villegas and X.~Marichal.
+\newblock Perceptually-weighted evaluation criteria for segmentation masks in
+  video sequences.
+\newblock {\em Image Processing, {IEEE} Transactions on}, 13(8):1092--1103,
+  2004.
+
+\bibitem{signal_zhou_2009}
+Zhou Wang and A.C. Bovik.
+\newblock Mean squared error: Love it or leave it? a new look at signal
+  fidelity measures.
+\newblock {\em Signal Processing Magazine, IEEE}, 26(1):98--117, 2009.
+
+\bibitem{wang_image_2004}
+Zhou Wang, {A.C.} Bovik, {H.R.} Sheikh, and {E.P.} Simoncelli.
+\newblock Image quality assessment: from error visibility to structural
+  similarity.
+\newblock {\em Image Processing, {IEEE} Transactions on}, 13(4):600--612, 2004.
+
+\bibitem{weinland_free_2006}
+Daniel Weinland, Remi Ronfard, and Edmond Boyer.
+\newblock Free viewpoint action recognition using motion history volumes.
+\newblock In {\em {COMPUTER} {VISION} {AND} {IMAGE} {UNDERSTANDING}}, 2006.
+
+\bibitem{withagen_intensity_2010}
+P.J. Withagen, K.~Schutte, and F.C.A. Groen.
+\newblock Global intensity correction in dynamic scenes.
+\newblock {\em International Journal of Computer Vision}, 86(1):33--47, 2010.
+
+\bibitem{zhang_image_2008}
+Hui Zhang, Jason~E. Fritts, and Sally~A. Goldman.
+\newblock Image segmentation evaluation: A survey of unsupervised methods.
+\newblock {\em Comput. Vis. Image Underst.}, 110(2):260–280, May 2008.
+
+\bibitem{zivkovic_recursive_2004}
+Z.~Zivkovic and F.~van~der Heijden.
+\newblock Recursive unsupervised learning of finite mixture models.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 26(5):651--656, 2004.
+
+\bibitem{zivkovic_efficient_2006}
+Zoran Zivkovic and Ferdinand van~der Heijden.
+\newblock Efficient adaptive density estimation per image pixel for the task of
+  background subtraction.
+\newblock {\em Pattern Recogn. Lett.}, 27(7):773–780, May 2006.
+
+\end{thebibliography}

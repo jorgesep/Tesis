@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Tesis.aux
+A level-1 auxiliary file: src/Portada.aux
+A level-1 auxiliary file: src/Agradecimientos.aux
+A level-1 auxiliary file: src/Resumen.aux
+A level-1 auxiliary file: src/Glosario.aux
+A level-1 auxiliary file: src/Capitulo_1.aux
+A level-1 auxiliary file: src/Capitulo_2.aux
+A level-1 auxiliary file: src/Capitulo_3.aux
+A level-1 auxiliary file: src/Capitulo_4.aux
+A level-1 auxiliary file: src/Capitulo_5.aux
+A level-1 auxiliary file: src/Capitulo_6.aux
+A level-1 auxiliary file: src/Capitulo_7.aux
+A level-1 auxiliary file: src/Apendice_A.aux
+A level-1 auxiliary file: src/Apendice_B.aux
+The style file: plain.bst
+Database file #1: biblio/bibliografia.bib
+Warning--string name "dic" is undefined
+--line 598 of file biblio/bibliografia.bib
+Warning--string name "dic" is undefined
+--line 606 of file biblio/bibliografia.bib
+Warning--string name "dic" is undefined
+--line 614 of file biblio/bibliografia.bib
+A bad cross reference---entry "confidence_bands_macskassy_2004"
+refers to entry "conf/rocai/2004", which doesn't exist
+Warning--I didn't find a database entry for "conf/rocai/2004"
+Warning--empty institution in gross_cmu_2001
+Warning--empty booktitle in horprasert_astatistical_1999
+You've used 47 entries,
+            2118 wiz_defined-function locations,
+            782 strings with 13383 characters,
+and the built_in function-call counts, 18696 in all, are:
+= -- 1814
+> -- 891
+< -- 27
++ -- 344
+- -- 292
+* -- 1266
+:= -- 2902
+add.period$ -- 145
+call.type$ -- 47
+change.case$ -- 268
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 793
+empty$ -- 1471
+format.name$ -- 292
+if$ -- 4105
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 47
+newline$ -- 234
+num.names$ -- 104
+pop$ -- 330
+preamble$ -- 1
+purify$ -- 223
+quote$ -- 0
+skip$ -- 648
+stack$ -- 0
+substring$ -- 1121
+swap$ -- 291
+text.length$ -- 27
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 178
+warning$ -- 2
+while$ -- 162
+width$ -- 49
+write$ -- 526
+(There was 1 error message)

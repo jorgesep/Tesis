@@ -1,0 +1,37 @@
+%\chapter{Apéndice A}
+
+\chapter{Procesamiento de una secuencia}
+En esta última parte explica en forma simple, paso a paso, el funcionamiento de esta sistema para procesar una secuencia de video.
+
+\begin{description}
+\item[Paso 1:] Descargar la última versión de software desde repositorio GitHub, y construir el software
+
+%\small\begin{verbatim}
+\begin{lstlisting}[language=bash]
+$ git clone https://github.com/jorgesep/BGS.git
+$ cd BGS
+BGS $> mkdir build
+BGS $> cd build
+BGS/build $> cmake ..
+BGS/build $> make
+\end{lstlisting}
+%\end{verbatim}
+\normalsize
+\item[Paso 2:] Ejecutar la aplicación de \textit{bgs\_framework} localizada en el directorio bin.
+%\small\begin{verbatim}
+\begin{lstlisting}[language=bash]
+BGS/build$ ./bin/bgs_framework -i WalkTurnBack-Camera_3-Person1.avi
+\end{lstlisting}
+%\end{verbatim}
+\normalsize
+\item[Paso 3:] Ejecutar la aplicación de evaluación de desempeño \textit{pmbgs}.
+%\footnotesize\begin{verbatim}
+\begin{lstlisting}[language=bash]
+BGS/build$ ./bin/pmbgs -g ~/Ground-Truth/WalkTurnBackPerson1Camera3 -i mog2_mask/0
+5.210804e-01 1.944766e-03 6.413351e-01 6.586170e-01    5.262960e-01 1.828969e-03 6.508549e-01 6.636832e-01     467/467
+\end{lstlisting}
+%\end{verbatim}
+\normalsize
+\end{description} 
+
+

@@ -1,30 +1,32 @@
-\chapter{Algoritmos sustracción del fondo}
+\chapter{Algoritmos sustracción del fondo}\label{chap:algoritmos}
 
 \section{Introducción}
 
 
-Esta capítulo hace una presentación de dos algoritmos basados en modelos estadísticos para describir el segundo plano de una secuencia y hacer separación de objetos en movimiento de las imágenes del fondo. Se describe el modelo de \textit{Zivkovic y Heidjen} \cite{zivkovic_efficient_2006} de Mixtura de Gaussianas, el cual constituye la base de la mejora propuesta por \textit{Zezhi Chen} \cite{chen_vehicle_2012}. Estos modelos son los algoritmos sobre los cuales se desarrolla este trabajo de tesis. Ambos han sido incluidos en el desarrollo del sistema de software que permite ejecutar, para luego  comparar y evaluar desempeño sobre las secuencias proporcionadas por MuHAVI. El algoritmo de \textit{Zivkovic y Heidjen} se denomina \textit{MOG} (``\textit{Mixture of Gaussians}'') y el de \textit{Zezhi Chen} \textit{SAGMM} (``\textit{Self-Adaptive Mixture of Gaussians}''). 
+Esta capítulo hace una presentación de tres métodos basados en modelos estadísticos para describir el segundo plano de una secuencia y hacer separación de objetos en movimiento de las imágenes del fondo. Se describe el modelo de \textit{Zivkovic y Heidjen} \cite{zivkovic_efficient_2006} de Mixtura de Gaussianas, el cual constituye la base de la mejora propuesta por \textit{Zezhi Chen} \cite{chen_vehicle_2012}, se incluye el trabajo de \textit{Salvadori y Petracca} \cite{salvadori_gaussian_2012} que incorpora el modelo de mixtura de componentes gaussianos (\textit{GMM}) en micro-controladores. Estos modelos son los algoritmos sobre los cuales se desarrolla este trabajo de tesis. También se describe un modelo no-paramétrico (Elgammal et al\cite{elgammal_nonparametricmodel_2000}) para describir el fondo de una imagen. Todos los modelos basado en mixtura de componentes gaussianos han sido incluidos en el desarrollo del sistema de software que permite ejecutar, para luego  comparar y evaluar desempeño sobre las secuencias proporcionadas por MuHAVI, descritos más adelante en el capítulo~\ref{sistema_de_software}. El algoritmo de \textit{Zivkovic y Heidjen} se denomina \textit{MOG} (``\textit{Mixture of Gaussians}'') y el de \textit{Zezhi Chen} \textit{SAGMM} (``\textit{Self-Adaptive Mixture of Gaussians}'') y \textit{UCV} para los algoritmos del trabajo de \textit{Salvadori y Petracca}. 
 
 
 
 
 \section{Modelo General}
 
-La idea general del proceso de sustracción de fondo, es modelar cada uno de los píxeles de una escena, mediante una función de densidad de probabilidad. Se fundamenta, en la suposición que las imágenes de una escena sin objetos en circulación, tienen un comportamiento regular que puede ser descrito por un modelo estadístico. Un evento por ejemplo, podría ser detectado identificando las partes de la imagen, que no se ajustan con el modelo que describe el fondo. Un nuevo píxel sólo va a ser considerado parte del fondo, si su valor queda completamente descrito por la función de densidad de probabilidad. 
+La idea general del proceso de sustracción de fondo, es obtener y mantener actualizado (con nuevas imágenes) el modelo de la escena del fondo (\textit{background}) de una secuencia de imágenes, con el propósito de detectar movimientos inusuales, objetos en movimiento, dentro de esta secuencia. Se modela el comportamiento de cada uno de los píxeles de la escena, mediante una función de densidad de probabilidad. El concepto se fundamenta, en la suposición que las imágenes de una escena sin objetos en circulación, tienen un comportamiento regular que puede ser descrito por un modelo estadístico. Un evento podría, por ejemplo, ser detectado identificando las partes de la imagen, que no se ajustan con el modelo que describe el fondo. Un nuevo píxel sólo va a ser considerado parte del fondo, si su valor queda completamente descrito por la función de densidad de probabilidad que es mantenida en el modelo de la imagen de fondo. 
 
 
-El valor de intensidad en el tiempo de un píxel (o en el transcurso de una secuencia), es utilizado para construir una función de densidad de probabilidad, que corresponde al modelo estadístico que describe el comportamiento del píxel. El modelo, es determinado por una combinación lineal de un conjunto de distribuciones Gaussianas, y por su parte, cada componente es caracterizado por un grupo de parámetros, que identifica los elementos que emergen durante el avance de las imágenes.
+Se utiliza el valor de intensidad de un píxel, en el tiempo (o en el transcurso de una secuencia), para construir una función de densidad de probabilidad, que corresponde al modelo estadístico que describe el comportamiento del píxel. Esta densidad de probabilidad puede ser estimada mediante la construcción de modelos paramétricos o no-paramétricos. El primer tipo de modelo utiliza la combinación lineal de un conjunto de distribuciones Gaussianas, en el que cada componente (Gaussiano) es caracterizado por un grupo de parámetros, que identifica los elementos que emergen durante el avance de las imágenes. El segundo tipo es construido a través de una estimación no-paramétrica de la función de densidad de probabilidad. A diferencia del tipo de modelado paramétrico, que estima un conjunto de parámetros de una función de densidad, el no-parametrico emplea una función '\textit{kernel}' (Normal, Uniforme, Epanechnikov, Gaussiano) para construir la forma del función de densidad de probabilidad.
+
+
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[scale=0.5]{img/figura_3_1}
+      \includegraphics[scale=0.5]{img/ch3/figura_3_1}
   \caption[Imágenes 570, 610 de secuencia ``\textit{Kick Camera 3 Person 4}'']{Imágenes 570 y 610 de la secuencia MuHAVI-MAS ``\textit{Kick Camera 3 Person 4}''. El punto en rojo señala la posición de un píxel en dos eventos diferentes}
 \label{posicion_340_160}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[scale=0.5]{img/figura_3_2}
+      \includegraphics[scale=0.5]{img/ch3/figura_3_2}
   \caption[Cambios de intensidad en el tiempo del valor de un pixel ]{Cambios del valor de intensidad de un color en la secuencia completa.}
 \label{intensidad_340_160}
 \end{figure}
@@ -34,7 +36,7 @@ La separación de píxeles entre elementos del fondo y otros objetos, puede ser 
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[scale=0.75]{img/histograma_pixel_340_160_3_2}
+      \includegraphics[scale=0.75]{img/ch3/histograma_pixel_340_160_3_2}
   \caption[Histograma secuencia completa ``\textit{Kick Camera 3 Person 4}'']{Histograma secuencia completa ``\textit{Kick Camera 3 Person 4}''}
 \label{histograma}
 \end{figure}
@@ -48,14 +50,14 @@ Se aprovecha estas características de la Mixtura de Gaussianas, para hacer una 
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[scale=0.75]{img/scatter_pt_340_160_3D_Blue_Green_Red}
+      \includegraphics[scale=0.75]{img/ch3/scatter_pt_340_160_3D_Blue_Green_Red}
   \caption[Gráfico dispersión 3D secuencia completa ``\textit{Kick Camera 3 Person 4}'']{Gráfico de dispersión en secuencia ``\textit{Kick Camera 3 Person 4}'' que muestra la nube de puntos relacionados con el escenario y el actor en movimiento.}
 \label{scatter_3D}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-      \includegraphics[scale=0.75]{img/scatter_pt_340_160_isotropic_Blue_Green}
+      \includegraphics[scale=0.75]{img/ch3/scatter_pt_340_160_isotropic_Blue_Green}
   \caption[Gráfico dispersión 2D secuencia completa ``\textit{Kick Camera 3 Person 4}'']{Gráfico de dispersión secuencia ``\textit{Kick Camera 3 Person 4}'', que muestra dos \textit{cluster} bien definidos}
 \label{scatter_2D}
 \end{figure}
@@ -90,10 +92,11 @@ La estimación de los parámetros $\vec{\theta} = \{\pi_1,..,\pi_k, \mu_1,..,\mu
 \end{equation}
 
  
-Debido a la dificultad de encontrar una solución analítica de \textit{MLE}, se emplea una aproximación numérica iterativa para maximizar la función de verosimilitud.  El algoritmo de esperanza-maximización (EM) \cite{dempster_maximum_1977}, se usa para encontrar soluciones de máxima verosimilitudes. Este es un procedimiento iterativo que busca un máximo local de la función log-verosimilitud. Este algoritmo es fácil de implementar, sin embargo una de sus limitaciones está en la posibilidad de converger en un máximo local no inicializado apropiadamente.
+Debido a la dificultad de encontrar una solución analítica de \textit{MLE}, se emplea una aproximación numérica iterativa para maximizar la función de verosimilitud.  El algoritmo de esperanza-maximización (EM) \cite{dempster_maximum_1977}, se usa para encontrar soluciones de máxima verosimilitudes. Este es un procedimiento iterativo que busca un máximo local de la función log-verosimilitud. Este algoritmo es fácil de implementar, sin embargo una de sus limitaciones está en la posibilidad de converger en un máximo local cuando no se ha inicializado.
 
 
 \subsection{Actualización parámetros del Algoritmo}
+\label{subsec:actualizacion_parametros_algoritmo}
 
 Esta parte, describe el método de actualización recursivo que se utiliza en la estimación de los parámetros ($\mu_k$, $\Sigma_k$, $\pi_k$) de cada componente Gaussiano, establecido por \textit{Zivkovic y Heidjen} \cite{zivkovic_efficient_2006}. Por razones computacionales, las matrices de covarianza son consideradas Isotrópicas, es decir la matriz de identidad multiplicado por un único valor de varianza.
 
@@ -188,7 +191,7 @@ $C$ es una constante de normalización, $x^s$ es la parte espacial y $x^t$ la pa
 
 \begin{figure}[h!]
 \centering
-\fbox{\includegraphics[scale=0.5]{img/Spatio_Temporal_Filter_Example}}
+\fbox{\includegraphics[scale=0.5]{img/ch3/Spatio_Temporal_Filter_Example}}
 \caption[Procesamiento temporal de tres imágenes]{Procesamiento temporal de tres imágenes de una secuencia.}
 \label{fig:spatio_temporal_filter_example}
 \end{figure}
@@ -199,7 +202,7 @@ La figura \ref{fig:spatio_temporal_filter_example} es un ejemplo del funcionamie
 \begin{figure}[h!]
 \centering
 %\subfigure{\input{img/filter}}
-\fbox{\includegraphics[scale=0.5]{img/Spatio_Temporal_Filter}}
+\fbox{\includegraphics[scale=0.5]{img/ch3/Spatio_Temporal_Filter}}
 \caption[Filtro temporal spacial]{Diagrama en bloques del filtro temporal y espacial. La parte de filtro temporal toma tres imágenes y aplica un filtro Gaussiano, el filtro espacial junta los componentes y aplica otro kernel Gaussiano.}
 \label{fig:spatio_temporal_filter}
 \end{figure}
@@ -210,13 +213,139 @@ Una representación en bloques de la implementación de este filtro se puede not
 
 La efectividad de este filtro puede ser comparado en los gráficos de la figura \ref{fig:result_spatio_temporal_filter}. La imagen \ref{fig:Figure_A} es el cluster de la imagen de fondo en funcionamiento normal del algoritmo sin filtro aplicado sobre las imágenes. En cambio la imagen de la figura \ref{fig:Figure_B} es el resultado final del cluster de la imagen de fondo,  aplicando procesamiento previo a las imágenes antes de ingresar en el algoritmo. Se puede observar que el cluster final filtrado es mucho más compacto que el otro. Finalmente esta de filtrado es una ayuda en el proceso de separación del fondo de imagen de los elementos móviles.
 
-\begin{figure}
+\begin{figure}[!h]
 \centering     %%% not \center
-\subfigure[Resultado final sin filtro]{\label{fig:Figure_A}\includegraphics[width=70mm]{img/cluster_bg_340_160}}
-\subfigure[Resultado final con filtro]{\label{fig:Figure_B}\includegraphics[width=70mm]{img/cluster_bg_340_160_filter}}
+\subfigure[Resultado final sin filtro]{\label{fig:Figure_A}\includegraphics[width=70mm]{img/ch3/cluster_bg_340_160}}
+\subfigure[Resultado final con filtro]{\label{fig:Figure_B}\includegraphics[width=70mm]{img/ch3/cluster_bg_340_160_filter}}
 \caption[Comparación de efectividad del filtro en una secuencia completa]{Comparación de efectividad del filtro Espacial-Temporal aplicado en la secuencia completa }
 \label{fig:result_spatio_temporal_filter}
 \end{figure}
 
+%-----------------------------
+\newpage
+\section{Modelo GMM incluido en Micro-Controladores}\label{sec:ch3:ucvgmm}
+Este método \cite{salvadori_gaussian_2012}, denominado en este trabajo tesis como \textit{UCV}, aborda el problema de incluir el modelo \textit{GMM} en un microcontrolador sin capacidad de procesamiento en punto flotante, en microcontroladores de bajo consumo y bajo costo. En este método, al igual que el original, cada pixel de una imagen de fondo se continua representado por una mixtura de \textit{G} componentes gaussianas, y cada componente por los tres parámetros que describen una gaussiana; media ($\mu$), varianza ($\sigma^2$) y un peso ($w$). Además, se siguen realizando las mismas reglas de actualización definidas previamente en \ref{eq:sagmm_betha}, \ref{eq:sagmm_mu}, \ref{eq:sagmm_sigma}. Sin embargo, estas reglas de actualización son re-definidas mediante una operación de \textit{redondeo}. Se define para esto los conceptos de \textit{granularidad} ($\gamma$), y pasos de actualización \textit{updating step} ($\xi$). 
+
+\begin{equation} \label{eq:ch3:roundfunction}
+b=G\_ROUND(a,\xi,\gamma)= \left\{ 
+\begin{array}{l l}
+\lfloor \frac{a}{\gamma} \rfloor \ast \gamma + \gamma & \quad 
+\text{if $(a - \lfloor \frac{a}{\gamma} \rfloor \ast \gamma) \geq \xi$}\\
+\lfloor \frac{a}{\gamma} \rfloor \ast \gamma                  & \quad 
+\text{if $(a - \lfloor \frac{a}{\gamma} \rfloor \ast \gamma) < \xi$}
+\end{array} \right.
+\end{equation}
+
+Con \textit{granularidad} $\gamma$ definida desde un conjunto $B=\{ b_i \in N | b_{i+1} - b_i = \gamma\}$, $\xi=\frac{\gamma}{2}$, y $a$ el número a ser redondeado.
+
+\begin{equation}\label{eq:ch3:updating_rule_mu}
+\mu_{i+1} = G\_ROUND(\mu_i+k_id_i, \xi_{\mu}, \gamma_{\mu})
+\end{equation}
+\begin{equation}\label{eq:ch3:updating_rule_sigma}
+\sigma^2_{i+1} = G\_ROUND(\sigma^2_i + k_i(D_i-\sigma^2_i), \xi_{\sigma}, \gamma_{\sigma})
+\end{equation}
+
+Con $k_i=\frac{\alpha}{w_i}$, $p_i$ valor del de entrada, $d_i=p_i-\mu_i$, y $D_i=d^2_i$
+
+En contraste la regla de actualización de los pesos $w$ de cada componente gaussiano, no depende directamente del valor de entrada del pixel $p_i$, este depende del número de veces (contador $s$) que el pixel $k$ pertenezca a una componente gaussiana $g$. En caso que el pixel no pertenezca a esa componente gaussiana el contador $s$ se decrementa. Se especifica el número de iteraciones necesarias para alcanzar un peso $w$ a través de la siguiente relación:
+
+\begin{equation}\label{eq:ch3:updating_rule_w1}
+S(w,\alpha)=\frac{log_{10}(1-w)}{log_{10}(1-\alpha)}
+\end{equation}
+
+Con $\alpha$ el factor de aprendizaje. La relación anterior simplifica la actualización de los pesos a una operación de incremento y decremento de un contador. Pero esta relación no puede ser implementada en micro-controladores, por el problema de procesamiento en punto flotante. De esta manera se definen  aproximaciones lineales como solución para obtener el valor del peso $w$ desde un contador de enteros. 
+
+La aproximación lineal (figura \ref{fig:ch3:ucv_weight_linear}) aproxima la relación definida en \ref{eq:ch3:updating_rule_w1} por una recta que pasa por el origen y un punto $P_0=(S(w_0,\alpha), w_0)$ con $w_0=0.5$, y $m=2S(w_0,\alpha)$.
 
 
+\[
+w(s) = \frac{s}{m}
+\]
+
+
+\begin{figure}[!h]
+\centering     %%% not \center
+\subfigure[Aproximación Lineal]
+{\label{fig:ch3:ucv_weight_linear}\includegraphics[width=70mm]{img/ch3/ucv_linear}}
+\subfigure[Aproximación con dos lineas]
+{\label{fig:ch3:ucv_weight_poly}\includegraphics[width=70mm]{img/ch3/ucv_poly}}
+\caption[Aproximación de actualización de los pesos]{Aproximación de actualización de los pesos. }
+\label{fig:ch3:ucv_weight}
+\end{figure}
+
+
+Las curvas de la figura \ref{fig:ch3:ucv_weight} señalan una simplificación de las reglas de actualización del valor $w$, que determina si una componente Gaussiana pertenece al fondo de la imagen (\textit{Background}) o la silueta (\textit{Foreground}), este valor $w$ es el mismo parámetro $\hat{\pi}_k$ mencionado en la ecuación \ref{eq:mixturemu_update}. Este método aproxima la actualización del parámetro de peso $w$ (\textit{weight}) haciendo aproximación lineal de las curvas logarítmicas como se señala en las curvas de la figura \ref{fig:ch3:ucv_weight}. En el primer caso, aproximación con una recta, la linea recta pasa entre el origen y el punto $w_0=0.5$ y el contador hace un decremento o incremento para lograr el valor de peso requerido. En la segunda figura \ref{fig:ch3:ucv_weight_poly}, un ejemplo de aproximación con dos rectas (puede ser más de dos rectas), cada recta aproxima una componente Gaussiana diferente, una con mayor peso que la otra, la primera curva aproxima a una componente gaussiana de menor peso (\textit{Foreground}), y la segunda de mayor peso (\textit{Background}). La figura \ref{fig:ch3:gmm_bytes} se ilustra una representación (ejemplo tomado desde el trabajo \cite{salvadori_gaussian_2012}) de dos bytes por componente Gaussiano, con la aproximación de una linea (figura \ref{fig:ch3:gmm_linear}) y dos rectas (\ref{fig:ch3:gmm_staircase}).
+
+\begin{figure}[!h]
+\centering     %%% not \center
+\subfigure[Representación lineal]
+{\label{fig:ch3:gmm_linear}\includegraphics[width=70mm]{img/ch3/gmm_linear}}
+\subfigure[Representación con dos lineas]
+{\label{fig:ch3:gmm_staircase}\includegraphics[width=70mm]{img/ch3/gmm_staircase}}
+\caption[Representación contadores en 4 bytes]{Representación de contadores en 4 bytes. }
+\label{fig:ch3:gmm_bytes}
+\end{figure}
+
+
+
+%-----------------------------------
+\section{Modelo No-Paramétrico de fondo de imagen}
+\label{sec:modelo_noparametrico}
+
+%propone obtener la información reciente de una secuencia de imágenes, y actualizar continuamente el modelo del fondo, con la finalidad de capturar cambios repentinos producidos en una escena. Se 
+El modelo no-paramétrico de Elgammal et al\cite{elgammal_nonparametricmodel_2000}, plantea que cambios muy bruscos del valor de intensidad de un pixel, en periodos muy cortos de tiempo, no es modelado apropiadamente por un pequeño conjunto de distribuciones Gaussianas, resultando un modelo del fondo no muy preciso. Se demuestra que la distribución de intensidad, para una imagen con cambios significativos es del tipo multimodal. Este método propone obtener solamente la información más reciente de una secuencia de imágenes, y actualizar continuamente el modelo del fondo, de esta manera capturar cambios repentinos producidos en una escena.
+
+En aplicaciones de vigilancia exterior, una escena de fondo que se quiera modelar contiene varios elementos no estáticos, como arbustos o ramas de árboles que se mueven con el viento. Estos elementos producen cambios considerables en los valores de intensidad de un pixel. Se genera en consecuencia un modelo de distribución muy ancho, que abarca un amplio espectro de escala de grises, resultando una detección muy pobre, debido que los colores de los elementos móviles se confunden con los colores contenidos en la imagen de fondo. 
+
+Cada píxel en el modelo del fondo se representa por una función de densidad de probabilidad $P_r(x_t)$ obtenida de $x_1, x_2, ..., x_N$ muestras recientes  de los valores de un píxel. La probabilidad que el valor de un pixel sea $x_t$ en el tiempo $t$ será estimado de manera no-paramétrica utilizando un estimador kernel $K$, como se indica en la siguiente relación. 
+
+\begin{equation} \label{eq:nonparametric}
+P_r{(x_t)} = \frac{1}{n} \sum_{i=1}^{N} K(x_t-x_i)
+\end{equation}
+
+En esta ecuación $x_t$ es una muestra de un pixel en una imagen nueva que requiere ser clasificado y $K$ es una función kernel del tipo Normal $\mathcal{N}(x | \mu , \Sigma)$, $\Sigma$ representa el ancho de banda de la función de kernel. Se asume que existe independencia entre los distintos canales de colores, por ende $\Sigma$ es una matriz escalar y todos los colores tienen la misma varianza, como se explica en el punto  ~\ref{subsec:actualizacion_parametros_algoritmo}, de esta manera la estimación de densidad se reduce a la siguiente ecuación
+
+
+\begin{equation} \label{eq:kernel_estimation}
+P_r{(x_t)} = \frac{1}{n} \sum_{i=1}^{N} \prod_{j=1}^{d} \frac{1}{\sqrt{2\pi\sigma_{j}^{2}}} e^{-\frac{1}{2}\frac{(x_{t_j}-x{i_j})^2}{\sigma_{j}^{2}}}
+\end{equation}
+
+Una vez que la densidad de probabilidad ha sido estimada, el píxel $x_t$ es clasificado como imagen de fondo (\textit{background}) u objeto en movimiento (\textit{foreground}) si la el valor estimado de la densidad está arriba o abajo de cierto valor de umbral. Se usa entonces, esta estimación densidad de probabilidad para considerar un pixel como un elemento móvil, sí $P_r{x_t} < th$. La variable $th$ es un valor global de umbral que puede ser ajustado para lograr un porcentaje específico de falsos positivos. 
+
+Existen dos fuentes de variaciones en el valor de intensidad de un pixel, una es debido a estos cambios bruscos de intensidad, que se proyectan en el pixel en diferentes tiempos y variaciones locales de intensidad debido a un efecto borroso (blurring). El ancho de banda de la función kernel ($\sigma$) refleja estas variaciones locales de intensidad en la imagen y en el tiempo. La varianza local de cada uno de los canales de colores es calculada como la mediana de la diferencia ($x_1-x_{i+1}$) dos pares consecutivos del total de la muestra, independiente para canal de color.
+
+\begin{equation}\label{eq:median}
+\sigma = \frac{m}{0.68\sqrt{2}}
+\end{equation}
+
+
+Este método desarrolla además, una segunda de etapa que contribuye en la eliminación de falsos positivos no detectados en la primera etapa del proceso de sustracción de fondo. Estos falsos positivos (denominados falsas detecciones en el trabajo de Elgammal \cite{elgammal_nonparametricmodel_2000}) corresponden por una parte, a ruido aleatorio homogéneo presente en toda una imagen y por otra parte, movimientos que no están representados en el modelo de fondo, como desplazamiento de cámaras o movimientos de ramas de árboles, ambos producidos por la fuerza de viento. Se asume que estos desplazamientos son pequeños entre cuadros de imágenes consecutivos, de esta manera, esto permitiría decidir si un píxel detectado es un elemento del fondo que ha sido movido en una pequeña zona de la región detectada. Se definen dos tipos de probabilidades, la probabilidad de desplazamiento de un pixel $P_N{(x_t)}$, y la probabilidad de desplazamiento de un componente $P_c$. $P_N$ corresponde a la máxima probabilidad del valor de un píxel $x_t$ pertenece a la distribución del fondo en algún punto de la región $N(x)$. 
+
+\begin{equation}\label{eq:displacement_probability}
+P_N{(x_t)} = \max_{y \in N(x)} P_r(x_t | B_y)
+\end{equation}
+
+\begin{equation}
+P_c = \prod_{x \in C} P_N{(x)}
+\end{equation}
+
+La probabilidad de desplazamiento de componente $P_c$ se emplea para evitar de detecciones reales sean eliminadas por la primera restricción, se emplea para asegurar que un elemento móvil (\textit{foreground}) se ha desplazado en una zona cercana y no sólo algunos pixeles. Si este componente conectado se desplazado desde la escena del fondo, su probabilidad sería muy baja. Un pixel será, de esta forma, considerado parte de la escena de fondo si cumple con $(P_N(x) > th_1) \wedge (P_C(x) > th_2)$.
+
+
+Existen dos mecanismos para actualizar el modelo de fondo, con cada nueva muestra de un pixel. En ambos casos cada vez que se agrega una nueva muestra, la muestra más antigua se elimina del conjunto de muestras, para asegurar que la estimación de densidad de probabilidad se base en muestras recientes
+
+\begin{itemize}
+\item Actualización selectiva: Se agrega una nueva muestra al modelo únicamente si la muestra es un píxel de la imagen de fondo.
+\item Actualización a ciegas: Una nueva muestra se agrega al modelo, independiente si pertenece o no pertenece a la imagen de fondo.
+\end{itemize}
+
+ Junto con estos mecanismos de actualización, el modelo de Elgammal et al\cite{elgammal_nonparametricmodel_2000} mantiene además, dos modelos de fondos: largo y corto plazo 
+
+\begin{itemize}
+\item Modelo de corto plazo, es un modelo reciente de la escena que utiliza las primeras $N$ muestras, utilizando actualización selectiva.
+\item Modelo de largo plazo, es un modelo que emplea un número mayor de muestras (el total de la ventana de muestras) y por lo tanto contiene una versión más estable de la escena. Las muestras de este modelo se actualizan utilizando el mecanismo de actualización a ciegas.
+\end{itemize}
+
+\section{Resumen}
+
+En este capítulo se ha hecho una revisión detallada de los principales algoritmos basados en mixtura de componentes gaussianas (\textit{GMM}). La idea principal de estos algoritmos consiste en modelar el valor de intensidad de un pixel (o un grupo en el espacio de colores RGB) y construir una función de densidad en el transcurso del tiempo, la densidad se puede estimar mediante una mixtura de componentes Gaussianas. Se discrimina si un pixel pertenece a un objeto en movimiento o la imagen de fondo, verificando el comportamiento de las varianzas de las componentes Gaussianas. Se ha descrito principalmente el modelo de el modelo de Zivkovic\cite{zivkovic_recursive_2004} y Chen\cite{chen_vehicle_2012}. El próximo capítulo tratará de las principales métricas de evaluación de desempeño, se hará una descripción de los diferentes métodos de evaluación y las métricas que sirven para esos métodos.

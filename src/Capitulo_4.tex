@@ -1,12 +1,14 @@
-\chapter{Métricas de evaluación de rendimiento}
+\chapter{Métricas de evaluación de rendimiento}\label{chap:metricas}
  
 \section{Introducción}
 
-Este capítulo presenta una descripción de los variados enfoques y métricas empleados en la actualidad para hacer evaluación de calidad, centrando el análisis en el criterio denominado evaluación objetiva.
-
 Se encuentra en la literatura un conjunto heterogéneo de métodos de evaluación, que sirven para valorar la calidad de segmentación de un algoritmo. Pero, no existe acuerdo entre los investigadores para usar una metodología de evaluación general, que pueda proporcionar un criterio de comparación común, de medición del desempeño de los algoritmos de separación entre \emph{Foreground} y \emph{Background}. Asimismo, se han puesto a disposición de la comunidad una gran cantidad de escenarios de evaluación ("\emph{datasets}"), entre estos \cite{singh_muhavi_2010}, que establecen una serie de condiciones (ambientales, iluminación, etc) bajo las cuales, los algoritmos pueden experimentar diversas situaciones que les permitiría contrastar y evaluar su comportamiento en diferentes situaciones.
 
-Estos métodos han sido clasificados, dependiendo de la naturaleza del evaluador, en diversas metodologías que establecen dos categorías principales; \emph{método de evaluación subjetiva} \cite{mckoen_evaluation_2000} y \emph{método de evaluación objetiva}. Las metodologías de evaluación \emph{subjetivas}, se basan en la valoración que hace un grupo de observadores, al resultado final de un proceso de segmentación. No obstante, requiere un gran número de evaluaciones, para producir un resultado con relevancia estadística. En contraste con el método anterior, las metodologías denominadas \emph{objetivas}, buscan una forma de evaluación automática que no requiera la intervención humana en el proceso de medición. En general, el resultado final es una mixtura de métricas, que elaboran un ranking de la calidad de segmentación en una imagen o secuencia de vídeo. Igualmente, el tipo de métricas empleadas en la evaluación objetiva, se dividen en métricas \emph{analíticas} y \emph{empíricas}. Las métricas analíticas requieren conocimiento del algoritmo, para evaluar sus requerimientos,  complejidad,  y estructura. Las métricas del tipo empíricas en cambio, miden calidad del resultado final de un proceso de segmentación.
+Estos métodos han sido clasificados en la literatura y dependiendo de la naturaleza del evaluador, en diversas metodologías que establecen dos categorías principales; \emph{método de evaluación subjetiva} \cite{mckoen_evaluation_2000} y \emph{método de evaluación objetiva}. Este capítulo presenta una descripción de los variados enfoques y métricas empleados en la actualidad para hacer evaluación de calidad, centrando el análisis en el criterio denominado evaluación objetiva.
+
+\section{Enfoques de evaluación}
+
+Las metodologías de evaluación \emph{subjetivas}, se basan en la valoración que hace un grupo de observadores, al resultado final de un proceso de segmentación. No obstante, requiere un gran número de evaluaciones, para producir un resultado con relevancia estadística. En contraste con el método anterior, las metodologías denominadas \emph{objetivas}, buscan una forma de evaluación automática que no requiera la intervención humana en el proceso de medición. En general, el resultado final es una mixtura de métricas, que elaboran un ranking de la calidad de segmentación en una imagen o secuencia de vídeo. Igualmente, el tipo de métricas empleadas en la evaluación objetiva, se dividen en métricas \emph{analíticas} y \emph{empíricas}. Las métricas analíticas requieren conocimiento del algoritmo, para evaluar sus requerimientos,  complejidad,  y estructura. Las métricas del tipo empíricas en cambio, miden calidad del resultado final de un proceso de segmentación.
 
 Los métodos de evaluación del tipo empíricos se dividen a su vez, en métodos de \emph{discrepancia empírica} o \emph{evaluación relativa}, y métodos de \emph{evaluación autónomos}. Los métodos de discrepancia, se basan en medición de disparidad entre una imagen con anotaciones manuales o de referencia, ``ground truth'', y el resultado de segmentación. Las imágenes con anotaciones manuales funcionan como base de comparación, son mascaras binarias que etiqueta un pixel como background o foreground y tienen la finalidad de proporcionar un conjunto de datos independiente y objetivo, con el cual un resultado obtenido puede ser comparado y medido. Pero, estas mascaras son construidas manualmente, por lo que tienen en forma inherente un cierto grado de error e incertidumbre, que influye en la clasificación final como el mejor resultado que puede ser obtenido. Los métodos autónomos, en cambio, son métodos del tipo \emph{no-supervisados} \cite{zhang_image_2008} donde no requieren una imagen de referencia, evalúan el grado de igualdad de un conjunto de características de imágenes segmentadas previamente determinadas por evaluadores humanos.
 
@@ -20,7 +22,7 @@ Esta parte se enfoca principalmente en métodos de evaluación de calidad basado
 
 \subsection{Error Cuadrático Medio y Relación a Señal Ruido}
 
-Una de las formas más simples de medir calidad es el \emph{error cuadrático medio} (Median Squared Error - MSE) y la \emph{relación señal a ruido} (Peak Signal-to-Noise - PSNR) \cite{furht_handbook_2003} \cite{park_benchmark_2013}, el cual hace un promedio de el cuadrado de las diferencias de intensidad entre los pixeles de la imagen obtenida y su par de referencia, ground-truh. A pesar que es un método simple de calcular y promediar, ambas mediciones no tienen buena correlación con las medidas de percepción humana.
+Una de las formas más simples de medir calidad es el \emph{error cuadrático medio} (Median Squared Error - MSE) y la \emph{relación señal a ruido} (Peak Signal-to-Noise - PSNR) \cite{furht_handbook_2003} \cite{park_benchmark_2013}, el cual hace un promedio de el cuadrado de las diferencias de intensidad entre los pixeles de la imagen obtenida y su par de referencia, \emph{ground-truh}. A pesar, que es un método simple de calcular y promediar, ambas mediciones no tienen buena correlación con las medidas de percepción humana. En \cite{signal_zhou_2009} se demuestra mediante ejemplos, que \emph{MSE} no es una buen indicador para medir la fidelidad y calidad de una imagen. Se constatan valores similares de MSE en varias imágenes distorsionadas artificialmente (con respecto a una imagen original), no obstante las imágenes presentan calidades visuales muy diferentes.  También se hace notar en imágenes con pequeñas modificaciones geométricas, imperceptibles desde el punto de la calidad de percepción, valores de MSE muy grandes.
 
 \begin{equation}
 MSE=\frac{1}{N}\sum_{i=1}^N(x_{i}-y_{i})^2
@@ -35,18 +37,20 @@ Donde $N$ es el número de pixeles de la imagen, $x_{i}$ e $y_{i}$ es el pixel $
 
 \subsection{Métricas de Calidad Estática}
 
-Estas métricas de calidad, son elaboradas realizando la comparación individual de un pixel de la imagen resultante, con el pixel equivalente de su imagen de referencia o \emph{ground-truth}. Es un procedimiento de comparación pixel-pixel, que entrega como resultado una serie de mediciones base, usadas posteriormente para construir estas métricas de calidad. La imagen de la figura \ref{fig:mask} es la mascara de una silueta después de haber sido separada de su imagen de fondo. Esta mascara señala en diferentes colores los resultados de comparación con su imagen de referencia (figura \ref{fig:gt}). El número $TP$ (\emph{verdaderos positivo}) de esta imagen, corresponde a los píxeles de la silueta (\emph{foreground}) correctamente clasificados. $TN$ (\emph{verdadero negativo}) es el número de píxeles de la imagen de fondo (\emph{background}) seleccionados correctamente. $FP$ (\emph{falso positivo}) es el número de pixeles pertenecientes a la imagen de fondo seleccionados incorrectamente como píxeles perteneciente a la silueta. $FN$ (\emph{falso negativo}) corresponde a un número de pixeles de la silueta incorrectamente clasificados como imagen de fondo. El resultado de estas mediciones se colocan en una matriz de confusión (conocida también como tabla de contingencia) para formar la base de todas métricas de evaluación de calidad. 
-\\
+Estas métricas de calidad, son elaboradas realizando la comparación individual de un pixel de la imagen resultante, con el pixel equivalente de su imagen de referencia o \emph{ground-truth}. Es un procedimiento de comparación pixel-pixel, que entrega como resultado una serie de mediciones base, usadas posteriormente para construir estas métricas de calidad. La imagen de la figura \ref{fig:mask} es la mascara de una silueta después de haber sido separada de su imagen de fondo. Esta mascara señala en diferentes colores los resultados de comparación con su imagen de referencia (figura \ref{fig:gt}). El número $TP$ (\emph{verdaderos positivo}) de esta imagen, corresponde a los píxeles de la silueta (\emph{foreground}) correctamente clasificados. $TN$ (\emph{verdadero negativo}) es el número de píxeles de la imagen de fondo (\emph{background}) seleccionados correctamente. $FP$ (\emph{falso positivo}) es el número de pixeles pertenecientes a la imagen de fondo seleccionados incorrectamente como píxeles perteneciente a la silueta. $FN$ (\emph{falso negativo}) corresponde a un número de pixeles de la silueta incorrectamente clasificados como imagen de fondo. El resultado de estas mediciones se colocan en una matriz de confusión (conocida también como tabla de contingencia) para formar la base de todas métricas de evaluación de calidad, como se indica en figura \ref{fig:confusion_matrix}. 
 
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[scale=0.6]{img/Confusion_Matrix}
-\caption{Matriz de Confusión}
-\label{fig:confusion_matrix}
+\begin{figure}
+\centering     %%% not \center
+\subfigure[Mascara estimada]{\label{fig:mask}\includegraphics[width=50mm]{img/ch4/mask}}
+\subfigure[Imagen de referencia]{\label{fig:gt}\includegraphics[width=50mm]{img/ch4/gt}}
+\label{fig:metricas_calidad_estatica}
+\caption[Métricas de calidad estática]{Métricas de calidad estática, imagen de referencia y mascara estimada por algoritmo}
 \end{figure}
 
 Una condición positiva de la imagen de referencia en esta tabla, se refiere a todos los píxeles que circunscriben la silueta (\emph{foreground}) que un algoritmo debiera separar del fondo de imagen, y la condición negativa son todos los píxeles que están en el fondo de la imagen. En otro aspecto, la condición positiva en el resultado de la separación (mascara) son todos los píxeles que fueron clasificados pertenecientes a la silueta, y la condición negativa son todos los píxeles clasificados en la imagen de fondo. Los números localizados en la diagonal principal de esta matriz representan decisión correcta ($TP$ y $TN$) y los números de diagonal opuesta ($FN$ y $FP$) son los errores (``confusión'') realizados durante la clasificación, en este caso son los errores del algoritmo al equivocar píxeles de la imagen de fondo con píxeles de la silueta y píxeles de una silueta con los de la imagen de fondo.
+
+
+
 
 \[
 Precision=\frac{Total \: pixeles \, en \, foreground \, clasificados \, correctamente}{Total \, pixeles \, imagen \, resultante}
@@ -61,7 +65,17 @@ True Positive Rate=\frac{Positivos  \: (silueta) \: clasificados \, correctament
 False Negative Rate=\frac{Negatives  \: (background) \: clasificados \, incorrectamente}{Total \, negativos}
 \]
 
-A partir de esta matriz de contingencia, se determinan una serie de métricas comunes de calidad, que se utilizan en los algoritmos de clasificación. La \textbf{tasa verdaderos positivos} (\textit{true positive rate}) es una medida de proporción de los positivos (píxeles de la silueta) seleccionados correctamente, está métrica también es conocida como \textit{recall} o \textit{sensitivity}. La \textbf{tasa falsos positivos} (\textit{false positive rate}) o tasa de falsas alarmas, corresponden a la proporción de negativos (píxeles \textit{background}) clasificados incorrectamente. Una medida complementaria a la tasa de falsos positivos es la métrica de \textit{specificity}, el cual es una proporción de negativos (\textit{background}) clasificados correctamente. En sistemas de recuperación de información (\emph{Information Retrieval}) las medidas de \emph{precision} (medida de proporción de la cantidad de píxeles seleccionados correctamente), \emph{recall} y media armónica \emph{F-Measure} \cite{brutzer_evaluation_2011} \cite{herrero_background_2009} \cite{park_benchmark_2013} (medida de desempeño total) son muy utilizadas como métricas de evaluación de rendimiento.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.6]{img/ch4/Confusion_Matrix}
+\caption{Matriz de Confusión}
+\label{fig:confusion_matrix}
+\end{figure}
+
+
+
+A partir de esta matriz de contingencia, se determinan una serie de métricas comunes de calidad, que se utilizan en los algoritmos de clasificación. La \textbf{tasa verdaderos positivos} (\textit{true positive rate}) es una medida de proporción de los positivos (píxeles de la silueta) seleccionados correctamente, está métrica también es conocida como \textit{recall} o \textit{sensitivity}. La \textbf{tasa falsos positivos} (\textit{false positive rate}) o tasa de falsas alarmas, corresponden a la proporción de negativos (píxeles \textit{background}) clasificados incorrectamente. Una medida complementaria a la tasa de falsos positivos es la métrica de \textit{specificity}, el cual es una proporción de negativos (\textit{background}) clasificados correctamente. En sistemas de recuperación de información (\emph{Information Retrieval}) las medidas de \emph{precision} (proporción de píxeles seleccionados correctamente), \emph{recall} y media armónica \emph{F-Measure} \cite{brutzer_evaluation_2011} \cite{herrero_background_2009} \cite{park_benchmark_2013} (medida de desempeño total) son muy utilizadas como métricas de evaluación de rendimiento, está medición esta entre el rango $0, 1$. En el caso de separación de foreground y background, un valor alto de \emph{F-measure} es un indicador para una mejor segmentación del foreground.
 
 
 
@@ -84,26 +98,27 @@ specificity = 1 - fpr
 F-Measure = \frac{1}{\frac{1}{precision} + \frac{1}{recall}}
 \end{equation}
 
-\begin{figure}
-\centering     %%% not \center
-\subfigure[Mascara estimada]{\label{fig:mask}\includegraphics[width=50mm]{img/mask}}
-\subfigure[Imagen de referencia]{\label{fig:gt}\includegraphics[width=50mm]{img/gt}}
-\label{fig:metricas_calidad_estatica}
-\caption[Métricas de calidad estática]{Métricas de calidad estática, imagen de referencia y mascara estimada por algoritmo}
-\end{figure}
+Las mediciones de la matriz de confusión se pueden relacionar también, con un indicador de correlación denominado \emph{Matthew Correlation Coefficient - MCC}. Ésta es una medida de calidad de clasificación de dos clases diferentes. Es un coeficiente de correlación entre la referencia y el resultado obtenido (observado). El rango de valores para este coeficiente, varía entre $-1, 1$ ($MCC \in [-1,1]$). Un resultado con valor $1$ indica un resultado perfecto, el $0$ representa un valor no mejor que un resultado aleatorio, y $-1$ es una total diferencia entre los obtenido y la referencia.
+
+\begin{equation} \label{eq:mcc}
+MCC = \frac{TP X TN - FP X FN}{\sqrt[2]{(TP + FP)(TP + FN)(TN + FP)(TN + FN)}}
+\end{equation}
 
 
 \subsection{Curva de operaciones característica}
-Los algoritmos de sustracción de imágenes de fondo o separación de \emph{foreground} y \emph{background}, son métodos que clasifican un píxel perteneciente a la imagen de fondo o a un objeto que está en movimiento, como una silueta del actor (\emph{foreground}). La curva de operaciones características (\textit{receiver operating characteristics - ROC}) es un gráfico que permite visualizar en forma global el desempeño de clasificación de un algoritmo. Un punto en esta curva relaciona la respuesta de clasificación, en este caso proporción de píxeles clasificados correctamente, con la proporción de píxeles negativos incorrectos. Describe un balance relativo entre beneficios (\emph{verdaderos positivos}) y costos (\emph{falsos positivos}). La curva se construye con el resultado de varias operaciones distintas, utilizando el mismo conjunto de datos, pero modificando algún parámetro característico de este algoritmo. Esto permitiría comparar el desempeño con diferentes configuraciones de un algoritmo.
+\label{subsec:roc}
+Los algoritmos de sustracción de imágenes de fondo o separación de \emph{foreground} y \emph{background}, son métodos que clasifican un píxel perteneciente a la imagen de fondo o a un objeto que está en movimiento, como una silueta del actor (\emph{foreground}). La curva de operaciones características (\textit{receiver operating characteristics - ROC}) es un gráfico que permite visualizar en forma global el desempeño de clasificación de un algoritmo. Un punto en esta curva relaciona la respuesta de clasificación, en este caso proporción de píxeles clasificados correctamente, con la proporción de píxeles negativos incorrectos. Describe un balance relativo entre beneficios (\emph{verdaderos positivos}) y costos (\emph{falsos positivos}). La curva se construye con el resultado de varias operaciones distintas, utilizando el mismo conjunto de datos, pero modificando algún parámetro característico de este algoritmo. Esto permite comparar el desempeño con diferentes configuraciones de un algoritmo.
 
-La figura \ref{fig:tpr_fpr} es una curva ROC de ejemplo, que muestra el resultado de dos algoritmos distintos que están siendo comparados. El punto (0,0) de la esquina inferior izquierda representa una estrategia de nunca producir una clasificación positiva, un algoritmo localizado en este punto no genera errores de falso positivo, pero tampoco obtiene verdadero positivos. El punto (1,1) es opuesto al anterior, siempre tiene clasificaciones positivas. El punto (0,1) es el resultado de clasificación perfecta, los píxeles en foreground fueron detectados completamente, sin errores en los píxeles de la imagen de fondo. Un punto en el espacio ROC es mejor que otro, sí esta localizado más cerca de la esquina superior izquierda que el otro punto; el algoritmo presenta una tasa de verdaderos positivos alta y una tasa de falsos positivos baja. Algoritmos que se ubican en la parte izquierda del gráfico, cercano al eje X, se pueden considerar ``convervadores'', hacen una clasificación positiva teniendo buena evidencia, tienen muy poco errores de falso positivo, pero tienen también una baja tasa de verdaderos positivos. Al contrario, algoritmos que se ubican en la parte superior derecha de la gráfica, son algoritmos más libres, hacen clasificaciones positivas con poca evidencia, clasificando todos los positivos correctamente, pero con una alta tasa de falsos positivos. 
+La figura \ref{fig:tpr_fpr} es una curva ROC de ejemplo, que muestra el resultado de dos algoritmos diferentes. El punto (0,0) de la esquina inferior izquierda representa una estrategia de nunca producir una clasificación positiva, un algoritmo localizado en este punto no genera errores de falso positivo, pero tampoco obtiene verdadero positivos. El punto (1,1) es opuesto al anterior, siempre tiene clasificaciones positivas. El punto (0,1) es el resultado de clasificación perfecta, los píxeles en foreground fueron detectados completamente, sin errores en los píxeles de la imagen de fondo. Un punto en el espacio ROC es mejor que otro, sí esta localizado más cerca de la esquina superior izquierda que el otro punto; el algoritmo presenta una tasa de verdaderos positivos alta y una tasa de falsos positivos baja. Algoritmos que se ubican en la parte izquierda del gráfico, cercano al eje X, se pueden considerar ``convervadores'', hacen una clasificación positiva teniendo buena evidencia, tienen muy poco errores de falso positivo, pero tienen también una baja tasa de verdaderos positivos. Al contrario, algoritmos que se ubican en la parte superior derecha de la gráfica, son algoritmos más libres, hacen clasificaciones positivas con poca evidencia, clasificando todos los positivos correctamente, pero con una alta tasa de falsos positivos. 
+
+La recta $y=x$ representa una estrategia de estimación aleatoria, en algoritmos de clasificación binaria. Cualquier punto en esta recta, implica el mismo valor de clasificación para ambas clases. Por ejemplo, un algoritmo que hace una estimación aleatoria de obtener una silueta la mitad del tiempo, se puede esperar que obtenga la mitad de silueta y el fondo de imagen en forma correcta, ubicando esta clasificación en el punto (0.5, 0.5) de la gráfica ROC. Sí se estima por ejemplo que la estimación de la silueta es positiva el 90\% del tiempo, se puede esperar conseguir un 90\% de tasa de verdaderos positivos, pero con un incremento de la tasa de falsos negativos a un 90\% también.
 
 
 
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.5]{img/curva_operaciones_caracteristicas}
+\includegraphics[scale=0.5]{img/ch4/curva_operaciones_caracteristicas}
 \caption{Curva de operaciones características}
 \label{fig:tpr_fpr}
 \end{figure}
@@ -112,6 +127,7 @@ La figura \ref{fig:tpr_fpr} es una curva ROC de ejemplo, que muestra el resultad
 
 
 \subsection{Métricas de Percepción}
+\label{sub:metricas_percepcion}
 
 Estas métricas intentan ponderar el concepto de percepción de un observador, sobre el resultado final de segmentación. Se propone cuantificar los conceptos de \emph{exactitud espacial} (spatial accuracy) y \emph{estabilidad temporal} \cite{liu_metrics_2011} \cite{cavallaro_objective_2002} o \emph{coherencia temporal} \cite{villegas_perceptually-weighted_2004}. Ponderan, mediante algún tipo de función definida, la discrepancia entre una mascara estimada y la de su referencia (ground-truth), tomando en cuenta la inexactitud potencial que puede contener la mascara de referencia, la localización de los pixeles con errores relativo al borde de la mascara de referencia, y el tipo de errores (FP, FN). 
 
@@ -143,7 +159,7 @@ w^i_j = \frac{\alpha_nd^j_n}{D}
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.4]{img/PesosFalsoPositivoNegativo}
+\includegraphics[scale=0.4]{img/ch4/PesosFalsoPositivoNegativo}
 \caption{Pesos pixeles falso positivo y negativo}
 \label{fig:Contexto espacial pesos para pixeles falso positivo y negativo}
 \end{figure}
@@ -164,7 +180,7 @@ Esta función $S$, tiene como variable $d$ distancia de un pixel en error al bor
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.4]{img/sigmoid_function}
+\includegraphics[scale=0.4]{img/ch4/sigmoid_function}
 \caption{Pesos usando función tipo sigmoidal}
 \label{fig:Pesos tipo sigmoidal}
 \end{figure}
@@ -209,7 +225,7 @@ D-score(x) = exp( - (\log_2(2.DT(x)) - \alpha )^2)
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[scale=0.4]{img/dscore}
+\includegraphics[scale=0.4]{img/ch4/dscore}
 \caption{Valores D-Score basados en la distancia desde la referencia ground-truth}
 \label{fig:Valores D-Score}
 \end{figure}
@@ -219,7 +235,7 @@ De acuerdo con la figura 4, se tiene una tolerancia de 3 pixeles desde la refere
 \section{Resumen de métodos de evaluación}
 Se ha hecho una descripción de la mayoría de los métodos de medición utilizados actualmente, basados principalmente en el paradigma de evaluación por discrepancia  o error. Una menor discrepancia con una referencia, brindan un ranking de mayor calidad de clasificación o comparación de algoritmos. En general, no existe una métrica ideal, que pueda ser utilizada como herramienta de comparación universal, entre los diferentes algoritmos existentes. De igual modo, estas métricas pueden ser empleadas en conjunto, de manera complementaría, aprovechando las diferentes características de ellas. Un caso concreto es el trabajo desarrollado para el desafío BMC \cite{park_benchmark_2013}.
 
-Las métricas más empleadas sin duda son ``specificity'' ($1-fp\; rate$), ``sensitivity'' (recall) y todas sus demás variantes, estas métricas proporcionan una medida general del resultado de clasificación. Presentan el compromiso entre la habilidad del algoritmo para identificar los píxeles correspondientes a una silueta (\emph{sensitivity}), y la habilidad del mismo algoritmo para identificar los píxeles pertenecientes a la imagen de fondo (\emph{specificity}). Estas dos métricas se colocan en una curva de ROC que permite comparar desempeño con otro algoritmo bajo las mismas condiciones. 
+Las métricas más empleadas sin duda son ``\textit{Specificity}'' ($1-fp\; rate$), ``\textit{Sensitivity}'' (recall) y todas sus demás variantes, estas métricas proporcionan una medida general del resultado de clasificación. Presentan el compromiso entre la habilidad del algoritmo para identificar los píxeles correspondientes a una silueta (\emph{sensitivity}), y la habilidad del mismo algoritmo para identificar los píxeles pertenecientes a la imagen de fondo (\emph{specificity}). Estas dos métricas se colocan en una curva de ROC que permite comparar desempeño con otro algoritmo bajo las mismas condiciones. 
 
 Las diferentes métodos basadas en el concepto de percepción se aproximan a una forma de evaluación que podría hacer un observador humano, para esto, hacen una combinación de un contexto espacial con un contexto temporal. Los errores se ponderan de acuerdo con distancia al borde de la mascara de referencia, la estabilidad de esta percepción espacial es además considerada en la evaluación de calidad. Los distintos enfoques encontrados de esta metodología se diferencian en el tipo de función empleada para hacer la ponderación espacial de los errores con respecto a la distancia del borde de su mascara. Evalúan con mayor ponderación el error falso negativo y localizado lejano al borde de la mascara. La métrica de ``D-Scorre'', a diferencia de la descripción previa castiga fuertemente los pixeles errados en el borde de la mascara, porque este tipo de errores no permiten realizar una buena clasificación.
 

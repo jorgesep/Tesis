@@ -1,0 +1,681 @@
+
+@inproceedings{schuldt_recognizing_2004,
+	title = {Recognizing human actions: A local {SVM} approach},
+	booktitle = {In Proc. {ICPR}},
+	author = {Schüldt, Christian and Laptev, Ivan and Caputo, Barbara},
+	year = {2004},
+	pages = {32–36}
+},
+
+@inproceedings{weinland_free_2006,
+	title = {Free viewpoint action recognition using motion history volumes},
+	booktitle = {{COMPUTER} {VISION} {AND} {IMAGE} {UNDERSTANDING}},
+	author = {Weinland, Daniel and Ronfard, Remi and Boyer, Edmond},
+	year = {2006}
+},
+
+@article{gorelick_actions_2007,
+	title = {Actions as Space-Time Shapes},
+	volume = {29},
+	issn = {0162-8828},
+	url = {http://dx.doi.org/10.1109/TPAMI.2007.70711},
+	doi = {10.1109/TPAMI.2007.70711},
+	number = {12},
+	journal = {{IEEE} Trans. Pattern Anal. Mach. Intell.},
+	author = {Gorelick, Lena and Blank, Moshe and Shechtman, Eli and Irani, Michal and Basri, Ronen},
+	month = dec,
+	year = {2007},
+	keywords = {action recognition, Action representation, poisson equation, shape analysis, space-time analysis},
+	pages = {2247–2253}
+},
+
+@techreport{gross_cmu_2001,
+	title = {The {CMU} Motion of Body {MoBo} Database},
+	author = {Gross, Ralph and Shi, Jianbo},
+	year = {2001}
+},
+
+@inproceedings{mech_objective_2001,
+	title = {Objective Evaluation Criteria For 2d-Shape Estimation Results Of Moving Objects},
+	booktitle = {Proc. of Workshop on Image Analysis for Multimedia Services},
+	publisher = {Elsevier},
+	author = {Mech, Roland},
+	year = {2001},
+	pages = {16–17}
+},
+
+@article{villegas_perceptually-weighted_2004,
+	title = {Perceptually-weighted evaluation criteria for segmentation masks in video sequences},
+	volume = {13},
+	issn = {1057-7149},
+	doi = {10.1109/TIP.2004.828433},
+	number = {8},
+	journal = {Image Processing, {IEEE} Transactions on},
+	author = {Villegas, P. and Marichal, X.},
+	year = {2004},
+	keywords = {Algorithms, Automated, Computer-Assisted, Digital images, figures of merit, Humans, Hypermedia, Image coding, Image Enhancement, Image Interpretation, Image segmentation, image sequences, Layout, {MPEG} 4 Standard, Pattern Recognition, peaked signal-to-noise ratio-like logarithmic scale, perceptually-weighted evaluation criteria, perfect reference mask, quality metrics, Reproducibility of Results, segmentation masks, Sensitivity and Specificity, Signal Processing, Signal to noise ratio, Testing, Video compression, Video Recording, video sequences, video signal processing},
+	pages = {1092--1103}
+},
+
+@article{wang_image_2004,
+	title = {Image quality assessment: from error visibility to structural similarity},
+	volume = {13},
+	issn = {1057-7149},
+	doi = {10.1109/TIP.2003.819861},
+	number = {4},
+	journal = {Image Processing, {IEEE} Transactions on},
+	author = {Wang, Zhou and Bovik, {A.C.} and Sheikh, {H.R.} and Simoncelli, {E.P.}},
+	year = {2004},
+	keywords = {Algorithms, Automated, Computer-Assisted, data compression, Data Interpretation, Data mining, Degradation, distorted image, error sensitivity, error visibility, human visual perception, human visual system, Humans, Hypermedia, Image coding, image compression, image database, Image Enhancement, Image Interpretation, Image quality, Indexes, Information Storage and Retrieval, {JPEG}, {JPEG2000}, Layout, Models, Pattern Recognition, perceptual image quality assessment, Quality assessment, Quality Control, reference image, Reproducibility of Results, Sensitivity and Specificity, Signal Processing, Statistical, structural information, structural similarity index, Subtraction Technique, Transform coding, visual perception, Visual system},
+	pages = {600--612}
+},
+
+@inproceedings{lallier_testing_2011,
+    title = {A testing framework for background subtraction algorithms comparison in intrusion detection context},
+    doi = {10.1109/AVSS.2011.6027343},
+    booktitle = {Advanced Video and Signal-Based Surveillance (AVSS), 2011 8th IEEE International Conference on},
+    author = {Lallier, C. and Reynaud, E. and Robinault, L. and Tougne, L.}, 
+    year = {2011},
+    keywords={image segmentation;image sequences;security of data;video streaming;video surveillance;D-score measurement;automatic background segmentation algorithm;background subtraction algorithm;background subtraction approach;computer-vision application;intrusion detection context;object identification;testing framework;video stream;video surveillance;Accuracy;Context;Delta modulation;Intrusion detection;Measurement uncertainty;Shape;Video surveillance}, 
+    pages = {314--319}
+},
+
+
+@article{prati_detecting_2003,
+	title = {Detecting moving shadows: algorithms and evaluation},
+	volume = {25},
+	issn = {0162-8828},
+	doi = {10.1109/TPAMI.2003.1206520},
+	number = {7},
+	journal = {Pattern Analysis and Machine Intelligence, {IEEE} Transactions on},
+	author = {Prati, A. and Mikic, I. and Trivedi, {M.M.} and Cucchiara, R.},
+	year = {2003},
+	keywords = {Image analysis, Image segmentation, image sequences, Layout, motion estimation, moving shadow detection, Noise robustness, object detection, performance evaluation, scene analysis, segmentation, shadow detection, Streaming media, Surveillance, tracking, traffic engineering computing, traffic scene analysis, {US} Department of Transportation, video sequences, video streams, visual surveillance},
+	pages = {918--923}
+},
+
+@inproceedings{toyama_wallflower_1999,
+	title = {Wallflower: principles and practice of background maintenance},
+	volume = {1},
+	doi = {10.1109/ICCV.1999.791228},
+	booktitle = {Computer Vision, 1999. The Proceedings of the Seventh {IEEE} International Conference on},
+	author = {Toyama, K. and Krumm, J. and Brumitt, B. and Meyers, B.},
+	year = {1999},
+	keywords = {background maintenance, background subtraction, Cameras, Electrical capacitance tomography, frame-level component, Humans, Layout, Lighting, motion estimation, object detection, Pixel, region-level component, Statistics, Surveillance, Switches, video surveillance, video surveillance systems, Wallflower},
+	pages = {255--261 vol.1}
+},
+
+@inproceedings{schlogl_performance_2004,
+	title = {Performance evaluation metrics for motion detection and tracking},
+	volume = {4},
+	doi = {10.1109/ICPR.2004.1333825},
+	booktitle = {Pattern Recognition, 2004. {ICPR} 2004. Proceedings of the 17th International Conference on},
+	author = {Schlogl, T. and Beleznai, C. and Winter, M. and Bischof, H.},
+	year = {2004},
+	keywords = {Computer errors, Computer graphics, Computer vision, image motion analysis, image sequences, motion detection, Motion segmentation, Reliability engineering, Surveillance, synthetic video sequence, Systems engineering and theory, Target tracking, tracking, tracking system, video sequences, video signal processing, video surveillance, video surveillance system},
+	pages = {519--522 Vol.4}
+},
+
+@inproceedings{benezeth_review_2008,
+	title = {Review and evaluation of commonly-implemented background subtraction algorithms},
+	doi = {10.1109/ICPR.2008.4760998},
+	booktitle = {Pattern Recognition, 2008. {ICPR} 2008. 19th International Conference on},
+	author = {Benezeth, Y. and Jodoin, P.-M. and Emile, B. and Laurent, H. and Rosenberger, C.},
+	year = {2008},
+	keywords = {Application software, background motion, Background noise, basic interframe difference, camera jitter, Cameras, commonly-implemented background subtraction, Computer vision, detection process, feature extraction, global threshold, image motion analysis, image sequences, Jitter, motion detection, moving objects, Noise robustness, performance evaluation, real video sequences, semisynthetic video sequences, Testing, video sequences, video signal processing},
+	pages = {1--4}
+},
+
+@inproceedings{liu_metrics_2011,
+	title = {Metrics for Objective Evaluation of Background Subtraction Algorithms},
+	doi = {10.1109/ICIG.2011.163},
+	booktitle = {Image and Graphics (ICIG), 2011 Sixth International Conference on},
+	author = {Liu, Leyuan and Sang, Nong},
+	year = {2011},
+	keywords = {Accuracy, Algorithm design and analysis, background subtraction, empirical discrepancy metrics, {LBP} based background subtraction algorithm, Measurement, Numerical stability, object detection, objective evaluation, objective evaluation metrics, reference masks, Shape, spatial accuracy, Stability criteria, temporal stability, video sequences},
+	pages = {562--565}
+},
+
+@inproceedings{rosell-ortega_background_2008,
+	title = {Background modelling in demanding situations with confidence measure},
+	doi = {10.1109/ICPR.2008.4761047},
+	booktitle = {Pattern Recognition, 2008. {ICPR} 2008. 19th International Conference on},
+	author = {Rosell-Ortega, J. and Andreu-Garcia, G. and Rodas-Jorda, A. and Atienza-Vanacloig, V.},
+	year = {2008},
+	keywords = {Airports, background algorithm with confidence, background subtraction, Computer vision, confidence value, Databases, Embedded system, Humans, image reconstruction, image restoration, Image segmentation, Layout, motion detection, Object recognition, object segmentation, reconstruct background model, Target tracking, video surveillance},
+	pages = {1--4}
+},
+
+@inproceedings{chen_vehicle_2012,
+	title = {Vehicle detection, tracking and classification in urban traffic},
+	doi = {10.1109/ITSC.2012.6338852},
+	booktitle = {Intelligent Transportation Systems (ITSC), 2012 15th International {IEEE} Conference on},
+	author = {Chen, Zezhi and Ellis, T. and Velastin, {S.A.}},
+	month = sep,
+	year = {2012},
+	keywords = {automobiles, background Gaussian mixture model, background subtraction, bus, camera vibration, Cameras, car, closed circuit television, Detectors, feature extraction, Gaussian processes, {GMM}, intensity-based pyramid {HOG} features extraction, Kalman filter, Kalman filters, majority voting, motorcycle, Motorcycles, object detection, object tracking, roadside {CCTV}, shadow removal method, sudden illumination changes, support vector machine, Support vector machines, {SVM}, urban traffic, van, vehicle classification, Vehicle detection, vehicle silhouette, vehicle tracking, Videos},
+	pages = {951 --956}
+},
+
+@INPROCEEDINGS{chen_self-adaptive_2011, 
+    author={Chen, Z. and Ellis, T.}, 
+    booktitle={Computer Vision Workshops (ICCV Workshops), 2011 IEEE International Conference on}, 
+    title={Self-adaptive Gaussian mixture model for urban traffic monitoring system}, 
+    year={2011}, 
+    pages={1769-1776}, 
+    keywords={Gaussian processes;image motion analysis;learning (artificial intelligence);road traffic;traffic engineering computing;video signal processing;Jaccard coefficient;Matthews correction coefficient;ROC curve;background modelling;background subtraction technique;dynamical learning rate;illumination change;moving vehicle identification;receiver operating characteristic curve;scene illumination;self-adaptive Gaussian mixture model;urban traffic monitoring system;urban traffic video;Adaptation models;Classification algorithms;Computational modeling;Heuristic algorithms;Image color analysis;Lighting;Mathematical model}, 
+    doi={10.1109/ICCVW.2011.6130463},
+},
+
+@inproceedings{chen_background_2009,
+    author = {Chen, Zezhi and Pears, Nick and Freeman, Michael and Austin, Jim},
+    biburl = {http://www.bibsonomy.org/bibtex/233e968dd5baa8bbd515262688115baa5/dblp},
+    booktitle = {ISVC (2)},
+    date = {2009-12-07},
+    description = {dblp},
+    editor = {Bebis, George and Boyle, Richard D. and Parvin, Bahram and Koracin, Darko and Kuno, Yoshinori and Wang, Junxian and Pajarola, Renato and Lindstrom, Peter and Hinkenjann, André and Encarnação, Miguel L. and Silva, Cláudio T. and Coming, Daniel S.},
+    ee = {http://dx.doi.org/10.1007/978-3-642-10520-3_109},
+    isbn = {978-3-642-10519-7},
+    keywords = {dblp},
+    pages = {1141-1150},
+    publisher = {Springer},
+    series = {Lecture Notes in Computer Science},
+    timestamp = {2009-12-07T00:00:00.000+0100},
+    title = {Background Subtraction in Video Using Recursive Mixture Models, Spatio-Temporal Filtering and Shadow Removal.},
+    url = {http://dblp.uni-trier.de/db/conf/isvc/isvc2009-2.html#ChenPFA09},
+    volume = 5876,
+    year = 2009
+}
+
+@article{withagen_intensity_2010,
+    year={2010},
+    issn={0920-5691},
+    journal={International Journal of Computer Vision},
+    volume={86},
+    number={1},
+    doi={10.1007/s11263-009-0247-8},
+    title={Global Intensity Correction in Dynamic Scenes},
+    url={http://dx.doi.org/10.1007/s11263-009-0247-8},
+    publisher={Springer US},
+    keywords={Intensity correction; Intensity variation; Camera calibration; Pixel classification; Time-varying imagery},
+    author={Withagen, P.J. and Schutte, K. and Groen, F.C.A.},
+    pages={33-47},
+    language={English}
+}
+
+@INPROCEEDINGS{horprasert_astatistical_1999,
+    author = {Thanarat Horprasert and David Harwood and Larry S. Davis},
+    title = {A statistical approach for real-time robust background subtraction and shadow detection},
+    booktitle = {},
+    year = {1999},
+    pages = {1--19}
+}
+
+
+@article{chan_active_2001,
+	title = {Active contours without edges},
+	volume = {10},
+	issn = {1057-7149},
+	doi = {10.1109/83.902291},
+	number = {2},
+	journal = {Image Processing, {IEEE} Transactions on},
+	author = {Chan, {T.F.} and Vese, {L.A.}},
+	month = feb,
+	year = {2001},
+	keywords = {Active contours, curve evolution, experimental results, Finite difference methods, finite differences, functional equations, Helium, Image edge detection, Image segmentation, initial curve, Level set, level sets, Mathematics, mean-curvature flow, minimal partition problem, Mumford-Shah functional, numerical algorithm, object detection, Partial differential equations, stopping term, Two-term control},
+	pages = {266 --277}
+},
+
+@article{chan_active_2000,
+	title = {Active Contours without Edges for Vector-Valued Images},
+	volume = {11},
+	journal = {Journal of Visual Communication and Image Representation},
+	author = {Chan, Tony F. and Sandberg, B. Yezrielev and Vese, Luminita A.},
+	year = {2000},
+	pages = {130–141}
+},
+
+@inproceedings{chang_object_2005,
+	address = {Bari, Italy},
+	series = {{IEA/AIE'2005}},
+	title = {Object tracking using mean shift and active contours},
+	isbn = {3-540-26551-1},
+	url = {http://dx.doi.org/10.1007/11504894_4},
+	doi = {10.1007/11504894_4},
+	booktitle = {Proceedings of the 18th international conference on Innovations in Applied Artificial Intelligence},
+	publisher = {Springer-Verlag},
+	author = {Chang, Jae Sik and Kim, Eun Yi and Jung, {KeeChul} and Kim, Hang Joon},
+	year = {2005},
+	pages = {26–35}
+},
+
+@inproceedings{stauffer_adaptive_1999,
+	title = {Adaptive Background Mixture Models for Real-Time Tracking},
+	volume = {2},
+	doi = {10.1109/CVPR.1999.784637},
+	booktitle = {Computer Vision and Pattern Recognition},
+	author = {Stauffer, Chris and Grimson, W. Eric L.},
+	year = {1999},
+	pages = {2246–2252}
+},
+
+@inproceedings{martinez-contreras_recognizing_2009,
+	address = {Washington, {DC}, {USA}},
+	series = {{AVSS} '09},
+	title = {Recognizing Human Actions Using Silhouette-based {HMM}},
+	isbn = {978-0-7695-3718-4},
+	url = {http://dx.doi.org/10.1109/AVSS.2009.46},
+	doi = {10.1109/AVSS.2009.46},
+	booktitle = {Proceedings of the 2009 Sixth {IEEE} International Conference on Advanced Video and Signal Based Surveillance},
+	publisher = {{IEEE} Computer Society},
+	author = {Martinez-Contreras, Francisco and Orrite-Urunuela, Carlos and Herrero-Jaraba, Elias and Ragheb, Hossein and Velastin, Sergio A.},
+	year = {2009},
+	keywords = {{HMM}, {MHI}, {MuHaVi}, Recognition, {SIR}, {SOM}, {ViHaSi}},
+	pages = {43–48}
+},
+
+@book{osher_level_2003,
+	series = {Applied Mathematical Sciences},
+	title = {Level Set Methods and Dynamic Implicit Surfaces},
+	isbn = {9780387954820},
+	lccn = {02020939},
+	url = {http://books.google.cl/books?id=SQQI2vqWR7gC},
+	publisher = {Springer},
+	author = {Osher, S. and Fedkiw, R.},
+	year = {2003}
+},
+
+@inproceedings{mckoen_evaluation_2000,
+	address = {Tampere, Finland},
+	title = {Evaluation of video segmentation methods for surveillance applications},
+	abstract = {Current research on performance evaluation of video segmentation methods is primarily focussed on the development of objective figures of merit. There is no standardised methodology for subjective evaluations of segmentation performance and these are currently perceived as too onerous. Using an experimental design and data analysis method derived from current practice in experimental psychology, we have explored a performance evaluation procedure that is largely based on subjective assessments. We report on statistically significant differences in perceived performance between three multi-object video segmentation and tracking methods developed for surveillance applications. The assessments were performed by a group each of experts and novices on a wide range of video content.},
+	booktitle = {Proc. European Signal Processing Conference},
+	author = {{McKoen}, K. and Navarro-Prieto, R. and Duc, B. and Durucan, E. and Ziliani, F. and Ebrahimi, T.},
+	year = {2000}
+},
+
+@article{zhang_image_2008,
+	title = {Image segmentation evaluation: A survey of unsupervised methods},
+	volume = {110},
+	issn = {1077-3142},
+	url = {http://dx.doi.org/10.1016/j.cviu.2007.08.003},
+	doi = {10.1016/j.cviu.2007.08.003},
+	number = {2},
+	journal = {Comput. Vis. Image Underst.},
+	author = {Zhang, Hui and Fritts, Jason E. and Goldman, Sally A.},
+	month = may,
+	year = {2008},
+	keywords = {Empirical goodness measure, Image segmentation, objective evaluation, Unsupervised evaluation},
+	pages = {260–280}
+},
+
+@incollection{herrero_background_2009,
+	series = {Lecture Notes in Computer Science},
+	title = {Background Subtraction Techniques: Systematic Evaluation and Comparative Analysis},
+	volume = {5807},
+	isbn = {978-3-642-04696-4},
+	url = {http://dx.doi.org/10.1007/978-3-642-04697-1_4},
+	booktitle = {Advanced Concepts for Intelligent Vision Systems},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Herrero, Sonsoles and Bescós, Jesús},
+	editor = {Blanc-Talon, Jacques and Philips, Wilfried and Popescu, Dan and Scheunders, Paul},
+	year = {2009},
+	pages = {33--42}
+},
+
+@inproceedings{cavallaro_objective_2002,
+	title = {Objective evaluation of segmentation quality using spatio-temporal context},
+	volume = {3},
+	doi = {10.1109/ICIP.2002.1038965},
+	booktitle = {Image Processing. 2002. Proceedings. 2002 International Conference on},
+	author = {Cavallaro, A. and Gelasca, {E.D.} and Ebrahimi, T.},
+	year = {2002},
+	keywords = {Algorithm design and analysis, human visual perception, Humans, Image segmentation, image segmentation quality, objective evaluation, reference segmentation, spatial contextual information, spatio-temporal context, temporal contextual information, Testing, Video coding, video segmentation, video signal processing, video surveillance, Virtual reality, visual perception},
+	pages = {III--301-III-304 vol.3}
+},
+
+@book{furht_handbook_2003,
+	address = {Boca Raton, {FL}, {USA}},
+	edition = {1},
+	title = {Handbook of Video Databases: Design and Applications (pp. 1041-1078)},
+	isbn = {{084937006X}},
+	publisher = {{CRC} Press, Inc.},
+	author = {Furht, Borko and Marques, Oge},
+	year = {2003}
+},
+
+@incollection{park_benchmark_2013,
+	series = {Lecture Notes in Computer Science},
+	title = {A Benchmark Dataset for Outdoor {Foreground/Background} Extraction},
+	volume = {7728},
+	isbn = {978-3-642-37409-8},
+	url = {http://dx.doi.org/10.1007/978-3-642-37410-4_25},
+	booktitle = {Computer Vision - {ACCV} 2012 Workshops},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Vacavant, Antoine and Chateau, Thierry and Wilhelm, Alexis and Lequièvre, Laurent},
+	editor = {Park, Jong-Il and Kim, Junmo},
+	year = {2013},
+	pages = {291--300}
+},
+
+@inproceedings{brutzer_evaluation_2011,
+	title = {Evaluation of background subtraction techniques for video surveillance},
+	isbn = {978-1-4577-0394-2},
+	url = {http://dx.doi.org/10.1109/cvpr.2011.5995508},
+	doi = {10.1109/cvpr.2011.5995508},
+	abstract = {Background subtraction is one of the key techniques for automatic video analysis, especially in the domain of video surveillance. Although its importance, evaluations of recent background subtraction methods with respect to the challenges of video surveillance suffer from various shortcomings. To address this issue, we first identify the main challenges of background subtraction in the field of video surveillance. We then compare the performance of nine background subtraction methods with post-processing according to their ability to meet those challenges. Therefore, we introduce a new evaluation data set with accurate ground truth annotations and shadow masks. This enables us to provide precise in-depth evaluation of the strengths and drawbacks of background subtraction methods.},
+	booktitle = {Computer Vision and Pattern Recognition (CVPR), 2011 {IEEE} Conference on},
+	publisher = {{IEEE}},
+	author = {Brutzer, S. and Hoferlin, B. and Heidemann, G.},
+	month = jun,
+	year = {2011},
+	keywords = {catt},
+	pages = {1937–1944}
+},
+
+@article{bouwmans_recent_2011,
+	title = {Recent Advanced Statistical Background Modeling for Foreground Detection: A Systematic Survey},
+	volume = {4},
+	abstract = {Background modeling is currently used to detect moving objects in video acquired from static cameras. Numerous statistical methods have been developed over the recent years. The aim of this paper is firstly to provide an extended and updated survey of the recent researches and patents which concern statistical background modeling and secondly to achieve a comparative evaluation. For this, we firstly classified the statistical methods in term of category. Then, the original methods are reminded and discussed following the challenges met in video sequences. We classified their respective improvements in term of strategies used. Furthermore, we discussed them in term of the critical situations they claim to handle. Finally, we conclude with several promising directions for future research. The survey also discussed relevant patents.},
+	number = {3},
+	journal = {Recent Patents on Computer Science},
+	author = {Bouwmans, T.},
+	year = {2011},
+	keywords = {Background Modeling, Kernel Density Estimation, Mixture of Gaussians, Subspace Learning}
+},
+
+@inproceedings{singh_muhavi_2010,
+	address = {Washington, {DC}, {USA}},
+	series = {{AVSS} '10},
+	title = {{MuHAVi:} A Multicamera Human Action Video Dataset for the Evaluation of Action Recognition Methods},
+	isbn = {978-0-7695-4264-5},
+	url = {http://dx.doi.org/10.1109/AVSS.2010.63},
+	doi = {10.1109/AVSS.2010.63},
+	booktitle = {Proceedings of the 2010 7th {IEEE} International Conference on Advanced Video and Signal Based Surveillance},
+	publisher = {{IEEE} Computer Society},
+	author = {Singh, Sanchit and Velastin, Sergio A. and Ragheb, Hossein},
+	year = {2010},
+	pages = {48–55}
+},
+
+@inproceedings{friedman_image_1997,
+	address = {San Francisco, {CA}, {USA}},
+	series = {{UAI'97}},
+	title = {Image Segmentation in Video Sequences: A Probabilistic Approach},
+	isbn = {1-55860-485-5},
+	url = {http://dl.acm.org/citation.cfm?id=2074226.2074247},
+	booktitle = {Proceedings of the Thirteenth Conference on Uncertainty in Artificial Intelligence},
+	publisher = {Morgan Kaufmann Publishers Inc.},
+	author = {Friedman, Nir and Russell, Stuart},
+	year = {1997},
+	pages = {175–181}
+},
+
+@article{zivkovic_efficient_2006,
+	title = {Efficient Adaptive Density Estimation Per Image Pixel for the Task of Background Subtraction},
+	volume = {27},
+	issn = {0167-8655},
+	url = {http://dx.doi.org/10.1016/j.patrec.2005.11.005},
+	doi = {10.1016/j.patrec.2005.11.005},
+	number = {7},
+	journal = {Pattern Recogn. Lett.},
+	author = {Zivkovic, Zoran and van der Heijden, Ferdinand},
+	month = may,
+	year = {2006},
+	keywords = {background subtraction, Gaussian mixture model, Non-parametric density estimation, On-line density estimation},
+	pages = {773–780}
+},
+
+@ARTICLE{figueiredo_unsupervised_2002, 
+    author={Figueiredo, Mario A T and Jain, A.K.}, 
+    journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on}, 
+    title={Unsupervised learning of finite mixture models}, 
+    year={2002}, 
+    volume={24}, 
+    number={3}, 
+    pages={381-396}, 
+    keywords={convergence;statistical analysis;unsupervised learning;Gaussian mixtures;convergence;finite mixture models;multivariate data;parametric mixture model;unsupervised learning;Unsupervised learning}, 
+    doi={10.1109/34.990138}, 
+    ISSN={0162-8828}
+},
+
+@ARTICLE{dempster_maximum_1977,
+    author = {A. P. Dempster and N. M. Laird and D. B. Rubin},
+    title = {Maximum likelihood from incomplete data via the EM algorithm},
+    journal = {JOURNAL OF THE ROYAL STATISTICAL SOCIETY, SERIES B},
+    year = {1977},
+    volume = {39},
+    number = {1},
+    pages = {1--38}
+}
+
+@article{bouwmans_background_2008,
+    url = {http://hal.archives-ouvertes.fr/hal-00338206},
+    title = {{Background Modeling using Mixture of Gaussians for Foreground Detection - A Survey}},
+    author = {Bouwmans, Thierry and El Baf, Fida and Vachon, Bertrand},
+    abstract = {{Mixture of Gaussians is a widely used approach for background modeling to detect moving objects from static cameras. Numerous improvements of the original method developed by Stauffer and Grimson [1] have been proposed over the recent years and the purpose of this paper is to provide a survey and an original classification of these improvements. We also discuss relevant issues to reduce the computation time. Firstly, the original MOG are reminded and discussed following the challenges met in video sequences. Then, we categorize the different improvements found in the literature. We have classified them in term of strategies used to improve the original MOG and we have discussed them in term of the critical situations they claim to handle. After analyzing the strategies and identifying their limitations, we conclude with several promising directions for future research.}},
+    keywords = {Background modeling, foreground detection, mixture of gaussians},
+    language = {English},
+    affiliation = {Math{\'e}matiques, Image et Applications - MIA},
+    pages = {219-237},
+    journal = {Recent Patents on Computer Science},
+    volume = {1},
+    number = {3 },
+    audience = {international },
+    year = {2008},
+    month = Nov,
+    pdf = {http://hal.archives-ouvertes.fr/hal-00338206/PDF/RPCS\_2008.pdf},
+}
+
+@book{mclachlan_finite_2000,
+    address = {New York},
+    author = {McLachlan, G. J. and Peel, D.},
+    publisher = {Wiley Series in Probability and Statistics},
+    title = {Finite mixture models},
+    year = 2000
+}
+
+@article{brand_structure_199,
+    author = {Brand, Matthew},
+    url = {http://dx.doi.org/10.1162/089976699300016395},
+    journal = {Neural Computation},
+    number = 5,
+    pages = {1155-1182},
+    title = {Structure Learning in Conditional Probability Models via an Entropic Prior and Parameter Extinction.},
+    volume = 11,
+    year = 1999
+}
+
+@ARTICLE{zivkovic_recursive_2004, 
+    author={Zivkovic, Z. and van der Heijden, F.}, 
+    journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on}, 
+    title={Recursive unsupervised learning of finite mixture models}, 
+    year={2004}, 
+    volume={26}, 
+    number={5}, 
+    pages={651-656}, 
+    keywords={maximum likelihood estimation;recursive estimation;unsupervised learning;finite mixture densities;finite mixture models;maximum a posteriori algorithm;multivariate data modelling;online algorithm;parameter estimation;recursive unsupervised learning;stochastic approximation recursive learning algorithm;Approximation algorithms;Computer Society;Entropy;Equations;Iterative algorithms;Maximum likelihood estimation;Parameter estimation;Recursive estimation;Stochastic processes;Unsupervised learning;Algorithms;Artificial Intelligence;Cluster Analysis;Computer Graphics;Computer Simulation;Information Storage and Retrieval;Likelihood Functions;Models, Biological;Models, Statistical;Numerical Analysis, Computer-Assisted;Pattern Recognition, Automated;Reproducibility of Results;Sensitivity and Specificity;Stochastic Processes;User-Computer Interface}, 
+    doi={10.1109/TPAMI.2004.1273970}, 
+    ISSN={0162-8828},}
+
+
+@ARTICLE{wren_pfinder_1997, 
+    author={Wren, C.R. and Azarbayejani, A. and Darrell, T. and Pentland, A.P.}, 
+    journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on}, 
+    title={Pfinder: real-time tracking of the human body}, 
+    year={1997}, 
+    volume={19}, 
+    number={7}, 
+    pages={780-785}, 
+    keywords={image coding;image colour analysis;image representation;image segmentation;video signal processing;2D representation;Pfinder;behavior interpretation;human body;low-bandwidth coding;multiclass statistical model;people tracking;real-time system;standard SGI Indy computer;video databases;wireless interfaces;Biological system modeling;Communication system security;Hardware;Head;Humans;Image segmentation;Pixel;Real time systems;Video compression;Virtual reality}, 
+    doi={10.1109/34.598236}, 
+    ISSN={0162-8828},}
+
+
+@INPROCEEDINGS{elgammal_nonparametricmodel_2000,
+    author = {Elgammal, Ahmed M. and Harwood, David and Davis, Larry S.},
+    title = {Non-parametric Model for Background Subtraction},
+    booktitle = {Proceedings of the 6th European Conference on Computer Vision-Part II},
+    series = {ECCV '00},
+    year = {2000},
+    isbn = {3-540-67686-4},
+    pages = {751--767},
+    numpages = {17},
+    url = {http://dl.acm.org/citation.cfm?id=645314.649432},
+    acmid = {649432},
+    publisher = {Springer-Verlag},
+    address = {London, UK, UK},
+} 
+
+#
+# Datasets
+#
+
+@article{piotr_pedestrian_2012,
+    author = {Piotr Doll\'ar and Christian Wojek and Bernt Schiele and Pietro Perona},
+    title = {Pedestrian Detection: An Evaluation of the State of the Art},
+    journal = {PAMI},
+    volume = {34},
+    year = {2012},
+}
+
+@INPROCEEDINGS{ess_depth_2007, 
+    author={Ess, A. and Leibe, B. and Van Gool, L.}, 
+    booktitle={Computer Vision, 2007. ICCV 2007. IEEE 11th International Conference on}, 
+    title={Depth and Appearance for Mobile Scene Analysis}, 
+    year={2007}, 
+    pages={1-8}, 
+    keywords={image motion analysis;iterative methods;object recognition;optimisation;traffic engineering computing;video signal processing;appearance-based object detection;belief propagation;geometry estimation;global optimization procedure;iterative approach;mobile scene analysis;object-object occlusions;pedestrian detection;pedestrian zone;robust stereo depth cues;scene geometry;structure-from-motion;video ground-plane estimation;Belief propagation;Geometry;Graphical models;Image analysis;Iterative methods;Layout;Legged locomotion;Object detection;Robustness;Testing}, 
+    doi={10.1109/ICCV.2007.4409092}, 
+    ISSN={1550-5499},}
+
+
+@incollection{salvadori_gaussian_2012,
+    year={2012},
+    isbn={978-3-642-33178-7},
+    booktitle={Advances in Visual Computing},
+    volume={7431},
+    series={Lecture Notes in Computer Science},
+    editor={Bebis, George and Boyle, Richard and Parvin, Bahram and Koracin, Darko and Fowlkes, Charless and Wang, Sen and Choi, Min-Hyung and Mantler, Stephan and Schulze, Jürgen and Acevedo, Daniel and Mueller, Klaus and Papka, Michael},
+    doi={10.1007/978-3-642-33179-4_24},
+    title={Gaussian Mixture Background Modelling Optimisation for Micro-controllers},
+    url={http://dx.doi.org/10.1007/978-3-642-33179-4_24},
+    publisher={Springer Berlin Heidelberg},
+    author={Salvadori, Claudio and Makris, Dimitrios and Petracca, Matteo and Martinez-del-Rincon, Jesus and Velastin, Sergio},
+    pages={241-251}
+    }
+
+
+@book{duda_pattern_2000,
+    author = {Duda, Richard O. and Hart, Peter E. and Stork, David G.},
+    title = {Pattern Classification (2Nd Edition)},
+    year = {2000},
+    isbn = {0471056693},
+    publisher = {Wiley-Interscience},
+} 
+
+@book{gamma_design_1995,
+    author = {Gamma, Erich and Helm, Richard and Johnson, Ralph and Vlissides, John},
+    title = {Design Patterns: Elements of Reusable Object-oriented Software},
+    year = {1995},
+    isbn = {0-201-63361-2},
+    publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+    address = {Boston, MA, USA},
+} 
+
+
+@MISC{ieee,
+    author = {IEEE},
+    title = {IEEE Xplore Digital Library},
+    month = Dic,
+    year = {2013},
+    url = {http://ieeexplore.ieee.org/}
+}
+
+@MISC{opencv,
+    author = {itseez},
+    title = {Open Source Computer Vision},
+    month = Dic,
+    year = {2013},
+    url = {http://opencv.org/}
+}
+
+@MISC{boost,
+    author = {boost},
+    title = {Boost C++ Libraries},
+    month = Dic,
+    year = {2013},
+    url = {http://www.boost.org/}
+}
+
+@MISC{github,
+    author = {GitHub},
+    title = {Build software better, together},
+    month = Dic,
+    year = {2013},
+    url = {https://github.com/}
+}
+
+
+@ARTICLE{signal_zhou_2009, 
+    author={Zhou Wang and Bovik, A.C.}, 
+    journal={Signal Processing Magazine, IEEE}, 
+    title={Mean squared error: Love it or leave it? A new look at Signal Fidelity Measures}, 
+    year={2009}, 
+    volume={26}, 
+    number={1}, 
+    pages={98-117}, 
+    keywords={mean square error methods;signal processing;MSE;mean squared error;signal fidelity measure;signal processing optimisation;Algorithm design and analysis;Distortion measurement;Dynamic range;Image processing;PSNR;Pixel;Pollution measurement;Signal design;Signal processing;Signal processing algorithms}, 
+    doi={10.1109/MSP.2008.930649}, 
+    ISSN={1053-5888},}
+
+
+@book{digital_image_processing_gonzalez,
+    author = {Gonzalez, Rafael C. and Woods, Richard E.},
+    title = {Digital Image Processing},
+    year = {2001},
+    isbn = {0201180758},
+    edition = {2nd},
+    publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+    address = {Boston, MA, USA},
+} 
+
+@article{fawcett_roc_analysis_2006,
+ author = {Fawcett, Tom},
+ title = {An Introduction to ROC Analysis},
+ journal = {Pattern Recogn. Lett.},
+ issue_date = {June 2006},
+ volume = {27},
+ number = {8},
+ month = jun,
+ year = {2006},
+ issn = {0167-8655},
+ pages = {861--874},
+ numpages = {14},
+ url = {http://dx.doi.org/10.1016/j.patrec.2005.10.010},
+ doi = {10.1016/j.patrec.2005.10.010},
+ acmid = {1159475},
+ publisher = {Elsevier Science Inc.},
+ address = {New York, NY, USA},
+ keywords = {Classifier evaluation, Evaluation metrics, ROC analysis},
+} 
+
+@inproceedings{confidence_bands_macskassy_2004,
+  added-at = {2004-08-18T00:00:00.000+0200},
+  author = {Macskassy, Sofus A. and Provost, Foster J.},
+  biburl = {http://www.bibsonomy.org/bibtex/296dc734cebf03f7c25b95307339f20e7/dblp},
+  booktitle = {ROCAI},
+  crossref = {conf/rocai/2004},
+  date = {2004-08-18},
+  description = {dblp},
+  editor = {Hernández-Orallo, José and Ferri, César and Lachiche, Nicolas and Flach, Peter A.},
+  interhash = {25679c3dd2bfac7a30a0d4a116ce715e},
+  intrahash = {96dc734cebf03f7c25b95307339f20e7},
+  keywords = {dblp},
+  pages = {61-70},
+  timestamp = {2004-08-18T00:00:00.000+0200},
+  title = {Confidence Bands for ROC Curves: Methods and an Empirical Study.},
+  url = {http://dblp.uni-trier.de/db/conf/rocai/rocai2004.html#MacskassyP04},
+  year = 2004
+}
+

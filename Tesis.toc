@@ -1,0 +1,73 @@
+\select@language {spanish}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {i}}{dummy.1}
+\vspace {1em}
+\contentsline {chapter}{Resumen}{\es@scroman {iii}}{dummy.2}
+\vspace {1em}
+\contentsline {chapter}{\'{I}ndice de Figuras}{\es@scroman {vii}}{dummy.3}
+\contentsline {chapter}{\'{I}ndice de Tablas}{\es@scroman {x}}{dummy.4}
+\contentsline {chapter}{\numberline {1}\MakeUppercase {Introducci\IeC {\'o}n}}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Antecedentes y motivaci\IeC {\'o}n}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Descripci\IeC {\'o}n del problema}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Soluci\IeC {\'o}n propuesta}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Objetivos y alcances del proyecto}{5}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Objetivo general}{5}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Objetivos espec\IeC {\'\i }ficos}{5}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Alcances}{6}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Metodolog\IeC {\'\i }as y herramientas utilizadas}{6}{section.1.5}
+\contentsline {subsubsection}{\numberline {1.5.0.1}Herramientas de desarrollo}{7}{subsubsection.1.5.0.1}
+\contentsline {subsubsection}{\numberline {1.5.0.2}Ambiente de desarrollo}{7}{subsubsection.1.5.0.2}
+\contentsline {section}{\numberline {1.6}Resultados obtenidos}{7}{section.1.6}
+\contentsline {section}{\numberline {1.7}Organizaci\IeC {\'o}n del documento}{7}{section.1.7}
+\contentsline {chapter}{\numberline {2}\MakeUppercase {Estado del Arte}}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Modelo de Mixtura de Gaussianas}{10}{section.2.1}
+\contentsline {section}{\numberline {2.2}Evaluaci\IeC {\'o}n de rendimiento}{13}{section.2.2}
+\contentsline {section}{\numberline {2.3}Conjunto de datos}{14}{section.2.3}
+\contentsline {chapter}{\numberline {3}\MakeUppercase {Algoritmos sustracci\IeC {\'o}n del fondo}}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introducci\IeC {\'o}n}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}Modelo General}{17}{section.3.2}
+\contentsline {section}{\numberline {3.3}Mixtura de distribuciones Gaussianas - GMM}{23}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Actualizaci\IeC {\'o}n par\IeC {\'a}metros del Algoritmo}{24}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Modelo Mixtura de Gaussianas auto-adaptativo}{25}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Factor de iluminaci\IeC {\'o}n global}{26}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Filtro espacial y temporal}{27}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Modelo GMM incluido en Micro-Controladores}{29}{section.3.5}
+\contentsline {section}{\numberline {3.6}Modelo No-Param\IeC {\'e}trico de fondo de imagen}{31}{section.3.6}
+\contentsline {section}{\numberline {3.7}Resumen}{33}{section.3.7}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {M\IeC {\'e}tricas de evaluaci\IeC {\'o}n de rendimiento}}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n}{35}{section.4.1}
+\contentsline {section}{\numberline {4.2}Enfoques de evaluaci\IeC {\'o}n}{35}{section.4.2}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}todos de evaluaci\IeC {\'o}n de calidad}{36}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Error Cuadr\IeC {\'a}tico Medio y Relaci\IeC {\'o}n a Se\IeC {\~n}al Ruido}{36}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}M\IeC {\'e}tricas de Calidad Est\IeC {\'a}tica}{37}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Curva de operaciones caracter\IeC {\'\i }stica}{40}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}M\IeC {\'e}tricas de Percepci\IeC {\'o}n}{41}{subsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Contexto espacial y temporal}{42}{subsubsection.4.3.4.1}
+\contentsline {subsubsection}{\numberline {4.3.4.2}Observaciones para cuantificaci\IeC {\'o}n espacial}{43}{subsubsection.4.3.4.2}
+\contentsline {subsection}{\numberline {4.3.5}Similaridad Estructural}{44}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}D-Score}{45}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}Resumen de m\IeC {\'e}todos de evaluaci\IeC {\'o}n}{46}{section.4.4}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Descripci\IeC {\'o}n del sistema de software}}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introducci\IeC {\'o}n}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}Captura de requerimientos}{50}{section.5.2}
+\contentsline {section}{\numberline {5.3}Arquitectura de sistema de software}{51}{section.5.3}
+\contentsline {section}{\numberline {5.4}Herramientas de Soporte Base}{54}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Herramientas de desarrollo}{54}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Biblioteca OpenCV de Visi\IeC {\'o}n por Computador}{54}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Biblioteca Boost}{55}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Descripci\IeC {\'o}n de Implementaci\IeC {\'o}n}{56}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Sistema Base Integraci\IeC {\'o}n Algoritmos de Visi\IeC {\'o}n por Computador}{57}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Diagrama de clases de implementaci\IeC {\'o}n}{58}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Herramienta de evaluaci\IeC {\'o}n de desempe\IeC {\~n}o}{61}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Operaci\IeC {\'o}n de la implementaci\IeC {\'o}n}{62}{subsection.5.5.4}
+\contentsline {section}{\numberline {5.6}Resumen}{64}{section.5.6}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {Experimentaci\IeC {\'o}n}}{65}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introducci\IeC {\'o}n}{65}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conjunto de datos de acciones humanas - MuHAVI}{65}{section.6.2}
+\contentsline {section}{\numberline {6.3}Procedimiento de Evaluaci\IeC {\'o}n}{67}{section.6.3}
+\contentsline {section}{\numberline {6.4}Evaluaci\IeC {\'o}n de Rendimiento}{69}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Comparaci\IeC {\'o}n puntos de operaci\IeC {\'o}n}{73}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Intervalo de confianza curva operaciones caracter\IeC {\'\i }sticas}{77}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}Resumen}{80}{section.6.5}
+\contentsline {chapter}{\numberline {7}\MakeUppercase {Conclusiones}}{87}{chapter.7}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Procesamiento de una secuencia}}{93}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}\MakeUppercase {Curvas de operaciones desagregadas por secuencia}}{95}{appendix.Alph2}

@@ -1,0 +1,164 @@
+\chapter{Herramientas de evaluación de algoritmos}
+
+\section{Introducción}
+La solución de software propuesta, es un conjunto de bibliotecas desarrolladas en lenguaje de programación C++ orientado a objetos. Es un grupo de clases que posibilitan, por una parte, construir una simple aplicación cliente, para incorporar los algoritmos de visión de computador que se intentan verificar, y por otra parte, evaluar resultados logrados con este cliente (u otra aplicación similar). Posteriormente, se compara el resultado obtenido con las imágenes de referencias, suministrada por el conjunto de datos que esta bajo evaluación. El software proporciona las interfaces necesarias, que simplifican la creación de instancias de los distintos algoritmos, incluidos en el sistema de software. Facilita también, la incorporación de nuevos algoritmos, encapsulando las bibliotecas (de estos algoritmos) en una clase que contiene las operaciones predeterminadas, reconocidas por el sistema de software. 
+
+Otro aspecto importante de esta solución de software, constituye la herramienta de evaluación de desempeño. Ésta fue proyectada, desde un principio, como un cliente que recibe de entrada un conjunto de imágenes procesadas, y otro conjunto de imágenes de referencia (\textit{ground-truth}). La salida es un resumen de desempeño, producto de la comparación de cada imagen. Este diseño, es independiente de la plataforma sobre el cual se ejecuta el algoritmo medido. La evaluación se realiza sobre las imágenes resultantes, las cuales fueron previamente procesadas por los algoritmos que se intentan valorar. Esta herramienta de software, incluye las métricas más comunes utilizadas en segmentación de imágenes, y un par de métricas relacionadas con la medición de percepción: similaridad estructural \cite{park_benchmark_2013, wang_image_2004}, y D-Score\cite{lallier_testing_2011}. El producto final es un archivo de texto, que contiene los resultados obtenidos para cada imagen y un valor acumulado total que informa el desempeño global del algoritmo logrado en toda la secuencia.
+
+
+
+
+\section{Descripción de sistema de software}
+
+La imagen de la figura \ref{fig:arq_software} es una vista a nivel de módulos, de la arquitectura de software esbozado para esta solución. Cada módulo es una entidad independiente, el cual facilita un conjunto de clases en C++, para ser utilizadas por los distintos programas clientes, en los diferentes niveles que ha sido estructurada esta solución. Está solución está diseñado en una estructura de capas, en que, los módulos de las capas inferiores suministran bibliotecas de clases para construir las clases y programas de los módulos en las capa superiores. Asimismo, los módulos de un mismo nivel pueden utilizar las bibliotecas de sus vecinos, como el caso, de los programas utilitarios en la capa del medio. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{img/BGS_Arquitecture}
+\caption[Arquitectura modular de software]{Diagrama de la arquitectura de software propuesta.}
+\label{fig:arq_software}
+\end{figure}
+ 
+A continuación, se hace una breve descripción de los diferentes módulos del diagrama en la figura \ref{fig:arq_software}.
+\begin{itemize}
+  \item El módulo de \textbf{Herramientas de desarrollo} proporciona todos los artefactos para construir esta solución de software
+  \item \textbf{OpenCV} es un conjunto de bibliotecas tipo \textit{Open Source} usada en vision por computador
+  \item La biblioteca \textbf{Boost} se ha usado para el manejo de caracteres y \textit{strings} en C++, expresiones regulares y control de opciones de entrada en programa principal.
+  \item El módulo de \textbf{Framework} es una de las piezas principales de software, que permite integrar algoritmos de separación \textit{foreground} y \textit{backgorund}.
+  \item El módulo de \textbf{Performance} es la otra parte principal del software, que contiene todas las métricas que posibilita realizar evaluación de desempeño.
+  \item El módulo de \textbf{Programas Utilitarios} es un conjunto de clases y programas básicos que sirven de apoyo de los demás módulos.   
+  \item El módulo de \textbf{Algoritmos} encapsula los diferentes algoritmos que se proyecta evaluar.
+  \item \textbf{Scripts de Análisis}, son programas desarrollados en \textit{python} que ayudan en la creación de gráficas de desempeños, empleados para hacer análisis de los datos resultantes.
+  \item El módulo de \textbf{Aplicaciones} contiene los clientes que hacen uso de las herramientas proporcionadas por este sistema de software. 
+\end{itemize}
+
+\section{Descripción de las herramientas de desarrollo}
+El desarrollo de los diferentes módulos de software ha sido realizado en una distribución Linux, \textbf{\textit{Ubuntu} 12.04 LTS precise}. Ubuntu es un sistema operativo Linux, basado en Debian, que incluye todas las herramientas necesarias, para hacer la implementación de los paquetes de software de esta solución.
+
+Los siguiente puntos especifican las principales herramienta involucradas en el periodo de desarrollo.
+
+
+\begin{itemize}
+\item \textbf{Compilador} GNU GCC versión 4.6
+\item \textbf{CMake} es un grupo de herramientas, \textit{open source} independiente del sistema operativo, diseñado para construir, validar paquetes de software. Se ha usado principalmente para generar los archivos \textit{Makefile} nativos al sistema operativo Ubuntu. La utilidad de CMake, radica principalmente, en la independencia de la plataforma sobre la cual se está desarrollando. En caso de ser necesario, los módulos de software también pueden ser compilados y ejecutados en otros ambientes (MAC OS X, otros ``distros'' de Linux, o Windows).
+\item Se ha aprovechado el \textbf{servidor de repositorios \textit{GitHub}}\cite{github}, para llevar el control de cambios de versión de los distintos módulos. Este servicio de repositorios público, se basa en \textit{GIT} un sistema de control de versiones distribuidos. Las principales características, entre varias otras más, es un sistema de control de los datos, almacena el estado de un proyecto a nivel de directorios y archivos. Crea un registro completo (\textit{snapshot}) del repositorio que esta siendo almacenado, esto facilita las tareas de recuperación, creación de ramas de desarrollo (\textit{branch}) y unión (\textit{merge}) de diferentes versiones de un módulo. El proyecto completo puede ser localizado en el siguiente URL: \textit{https://github.com/jorgesep/BGS}. 
+\end{itemize}
+
+
+\subsection{OpenCV biblioteca visión por computador}
+OpenCV \cite{opencv} (\textit{Open Source Computer Vision Library}) es una biblioteca que contiene una gran cantidad de algoritmos muy utilizados en visión por computador. La API (\textit{Application Programming Interface}) de OpenCV comprende una serie de módulos, que abarcan varios de los aspectos que se requieren, para construir una aplicación en visión por computador. El módulo principal, define las estructuras básicas, sobre la cual se desarrollan todas las aplicaciones, incluido los módulos de software construidos en este proyecto de tesis.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{img/Opencv_mat}
+\caption[OpenCV arreglo Mat ]{Descripción del arreglo básico MAT de OpenCV}
+\label{fig:mat}
+\end{figure}
+
+Se establece un arreglo de varias dimensiones, denominado \textit{Mat} (figura \ref{fig:mat}), que posibilita contener en forma nativa la estructura de una imagen. Esta estructura, permite realizar todas las operaciones matriciales básicas, indispensable en visión por computador para manipular imágenes. Incluye también, un modulo de procesamiento de imágenes (filtros lineales y no-lineales, transformación geométrica de imágenes, conversión de espacio de colores, histogramas, entre otros). Un módulo de análisis de videos, con varios algoritmos, entre ellos el algoritmo (\textit{Background Subtraction}) original de  \textit{Zivkovic y Heidjen} \cite{zivkovic_efficient_2006} evaluado en este trabajo.  Se agregan además, algoritmos de calibración, detectores de características, detección de objetos, una interfaz (\textit{gui}) para la captura de imágenes de video, \textit{codecs} de imágenes. También incluye un módulo para trabajar con GPU.
+
+La estructura de datos \textit{Mat}, es una clase C++ de n-dimensiones, constituida en dos partes. Un encabezado, con información de tamaño, método utilizado para almacenar, dirección de localización de memoria de los datos, y otros tipo de información relacionada con el tipo de datos. Mantiene también, un puntero de la zona de memoria donde se encuentra la matriz de píxeles, y su dimensionalidad depende del método empleado para almacenar los datos. El encabezado de la matriz es constante, pero su tamaño varía dependiendo del tipo de imagen que esta siendo manipulada. La figura \ref{fig:mat} es un ejemplo de esta matriz, la zona demarcada por el rectángulo en rojo, es una zona de interés que se desea estudiar. La zona es una matriz de números manejada por una estructura \textit{Mat}, en el caso de una imagen definida en el espacio RGB, se almacenan los valores de cada píxel, en forma contigua, en el orden: blue, green, y red. Las líneas de códigos que se indican a continuación, es un ejemplo de la facilidad de uso de la estructura de datos \textit{Mat}.\\
+
+\renewcommand{\lstlistingname}{Code}
+\begin{lstlisting}[caption={Ejemplo de uso estructura MAT},label=MATLabel]
+Mat A, C;                   // creates just the header parts
+A = imread("File.jpg" , CV_LOAD_IMAGE_COLOR); // allocate matrix
+Mat B(A);                   // Use the copy constructor
+C = A;    
+\end{lstlisting}
+
+\subsection{Biblioteca Boost}
+Boost \cite{boost} se ha usado principalmente para, evitar el problema que se encuentra al manipular archivos, operar con \textit{strings} de caracteres en C++. \textit{Boost} contiene varias bibliotecas utilitarias, y en este proyecto se han usado especialmente las que permiten manejar expresiones regulares, búsqueda de caracteres en una linea de \textit{strings}, reemplazo de caracteres, manipulación de archivos: $boost::filesystem$, $boost::system$, $boost::program_options$, $boost::reg_exp$.
+
+
+\section{Descripción de módulos principales del sistema de software}
+La segunda capa, de acuerdo con el esquema de la figura \ref{fig:arq_software}, está compuesto por dos módulos principales e independientes. El módulo de \textit{Framework} que permite incorporar y verificar los diferentes algoritmos, y el módulo que incluye diferentes métricas de evaluación de desempeño. Como señala el diagrama de componentes (operación), la figura \ref{fig:bgs_tasks}, los módulos son independientes y funcionan en tiempos diferentes. La salida del primero, es la entrada del segundo.
+
+ \begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/BGS_Tasks}
+\caption[Diagrama de componentes]{Diagrama de operación de los componentes de software.}
+\label{fig:bgs_tasks}
+\end{figure}
+
+
+\subsection{Framework de algoritmos}
+
+La entrada de este \textit{framework} puede ser un archivo de video o  conjunto de imágenes secuenciales en cualquier formato (jpg, png, etc). Su salida son mascaras de siluetas (\textit{foreground}), generadas por el algoritmo seleccionado. Los resultados (mascaras) son almacenados en directorios independientes, (se crea un directorio por algoritmo configurado). De esta manera, se podrían ejecutar uno o más algoritmos en forma simultánea, dependiendo de un archivo \textit{xml} general de configuración. La configuración de cada uno de los algoritmos incluidos, también se realiza a través de archivos XML de configuración. Por cada algoritmo incluido en este \textit{framework} existe un archivo XML de configuración. Los archivos XML contienen parámetros necesarios que necesita el algoritmo para ser ajustado a los requerimientos de operación, entre estos se encuentran por ejemplo, la tasa de aprendizaje, valores por defecto de las distribuciones que modelan el fondo de imagen. 
+
+
+\subsection{Diagrama de clases}
+Se ha utilizado un patrón de diseño \cite{gamma_design_1995} \textbf{estrategia} (\textit{Strategy}) para implementar el \textit{framework} que da soporte a los distintos algoritmos.  Los patrones de diseño\cite{gamma_design_1995} son esencialmente un conjunto de soluciones a problemas repetitivos que se encuentran en el desarrollo de software. Utilizar un patrón de diseño es aprovechar la experiencia para enfrentar un problema conocido, re-usando una solución ya comprobada. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/BGSFramework}
+\caption[Diagrama UML de clases Framework]{Diagrama UML de clases del framework de algoritmos}
+\label{fig:uml_framework}
+\end{figure}
+
+El patrón de diseño estrategia, en este caso, se usa para encapsular los algoritmos y hacerlos intercambiables, al ser invocados por algún cliente en tiempo de ejecución. Se basa en la idea de encapsular el comportamiento de la parte que cambia. Aprovecha la propiedad de ``polimorfismo'' en programación orientada a objetos, para definir una interfaz común, sobre la cual los diferentes ``comportamientos'' (algoritmos) son implementados. Como se muestra en la figura \ref{fig:uml_framework} se define una interfaz (clase abstracta en C++) para representar el comportamiento (\textit{IBGSFramework}) que se desea encapsular. Los distintos algoritmos son implementados como subclases de esta interfaz: \textit{SAGMMBuilder}, \textit{MOG2Builder}, \textit{NPBuilder}. Con este diseño, los algoritmos no están incluidos en la clase principal \textit{Framework}. Otros objetos podrían también hacer uso de \textit{IBGSFramework}, debido que no esta incorporada con la clase principal \textit{Framework}. Además, se pueden agregar más algoritmos (comportamientos) sin modificar las clases existentes o la clase principal.
+
+Las clases \textit{SAGMMBuilder}, \textit{MOG2Builder}, \textit{NPBuilder} (figura \ref{fig:uml_framework}) funcionan como clases especiales que crean las instancias de los algoritmos, hacen una abstracción de cada algoritmo exponiendo únicamente las operaciones esenciales que se necesitan en al framework.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/Sequence}
+\caption[Diagrama de secuencia]{Diagrama de secuencia de ejecución de un algoritmo}
+\label{fig:uml_sequence}
+\end{figure}
+
+
+El diagrama de secuencia de la figura \ref{fig:uml_sequence} muestra un ejemplo de los mensajes que son intercambiados entre un cliente, el \textit{framework} y un algoritmo. El cliente inicia enviando un mensaje al objeto \textit{framework} para indicar el tipo de algoritmo a utilizar. Luego, el cliente pide configurar, esto activa un mensaje desde el \textit{framework} hacia el algoritmo señalado, en el paso anterior. En la parte de inicialización se configura el algoritmo con parámetros por defecto. Finalmente, el cliente envía un mensaje de ``update'' que significa obtener una nueva mascara de foreground.
+
+
+\subsection{Herramienta de evaluación de desempeño}
+Se basa principalmente de una clase denominada ``\textit{Performance}'' (ver diagrama UML de figura \ref{fig:uml_evaluacion}), compuesta de una serie de operaciones (métodos) encargados de realizar los diferentes cómputos de desempeños. Se han dispuesto una serie de ``\textit{getters}'' (métodos públicos para acceder al valor previamente asignado de un atributo privado) para obtener el valor de las distintas métricas, cada vez que hace la comparación entre dos imágenes. Asimismo, se han definido un grupo de estructuras que permite agrupar y almacenar las diferentes métricas por tipo de medida. 
+Una estructura es un tipo de dato compuesto que permite almacenar un conjunto de datos de diferente tipo. Para esta clase, los datos que contiene las estructuras son de tipo \textit{double}.
+
+\begin{itemize}
+\item Estructura \textbf{\textit{Similarity}} contiene las métricas de similaridad: \textit{DScore}, \textit{MSSIM}, y relación señal a ruido \textit{PSNR}. Estás métricas son obtenidas a nivel \textit{frames}, es decir, la comparación se realiza entre dos imágenes.
+\item Estructura que mantiene los datos de la matriz de contingencia, \textbf{\textit{ContingencyMatrix}}. Son métricas obtenidas comparando píxel a píxel una imagen de entrada con su imagen de referencia.
+\item Estructura que mantiene las métricas comunes, \textbf{\textit{CommonMetrics}}: \textit{sensitivity}, \textit{specificity}.
+\item \textbf{\textit{StatMetrics}} Estructura compuesta que almacena los valores de media y mediana de las métricas comunes.
+\item \textbf{\textit{GlobalMetrics}} es una estructura compuesta que almacena un sumario de todas las métricas.
+\end{itemize}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{img/Performance}
+\caption[Diagrama UML herramienta de evaluación]{Diagrama UML herramienta de evaluación}
+\label{fig:uml_evaluacion}
+\end{figure}
+
+
+\subsection{Algoritmos incluidos en el Framework}
+La capa de más alto nivel en este sistema, consiste del módulo de aplicaciones, los scripts de análisis, y el modulo que encapsula los distintos algoritmos. Este último modulo es una capa de abstracción, encapsula y sólo expone los métodos que permiten operar el algoritmo. Es una clase que funciona como una envoltura sobre el algoritmo (\textit{wrapper}): lo configura, crea una instancia, y expone los principales métodos u operaciones. El diagrama UML de la figura \ref{fig:uml_framework} señala los algoritmos con el nombre de \textit{ALGBuilder}. Se ha usado el nombre genérico ``builder'', para señalar que el algoritmo está siendo encapsulado por esta clase.
+
+\section{Procesamiento de una secuencia}
+En esta última parte explica en forma simple, paso a paso, el funcionamiento de esta sistema para procesar una secuencia de video.
+
+\begin{description}
+\item[Paso 1:] Descargar la última versión de software desde repositorio GitHub, y construir el software
+\small\begin{verbatim}
+$ git clone https://github.com/jorgesep/BGS.git
+$ cd BGS
+BGS$ mkdir build
+BGS/build$ cmake ..
+BGS/build$ make
+\end{verbatim}
+\normalsize
+\item[Paso 2:] Ejecutar la aplicación de \textit{bgs\_framework} localizada en el directorio bin.
+\small\begin{verbatim}
+BGS/build$ ./bin/bgs_framework -i WalkTurnBack-Camera_3-Person1.avi
+\end{verbatim}
+\normalsize
+\item[Paso 3:] Ejecutar la aplicación de evaluación de desempeño \textit{pmbgs}.
+\footnotesize\begin{verbatim}
+BGS/build$ ./bin/pmbgs -g ~/Ground-Truth/WalkTurnBackPerson1Camera3 -i mog2_mask/0
+5.210804e-01 1.944766e-03 6.413351e-01 6.586170e-01    5.262960e-01 1.828969e-03 6.508549e-01 6.636832e-01     467/467
+\end{verbatim}
+\normalsize
+\end{description} 

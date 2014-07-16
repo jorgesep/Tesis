@@ -1,0 +1,163 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Aplicaciones en visi\IeC {\'o}n por computador}}{2}{figure.1.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Evitar obst\IeC {\'a}culos}}}{2}{figure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Reconocimiento de veh\IeC {\'\i }culos}}}{2}{figure.1.1}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Reconocimiento de peatones}}}{2}{figure.1.1}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Experimentaci\IeC {\'o}n con veh\IeC {\'\i }culos aut\IeC {\'o}nomos \relax \fontsize {6}{7}\selectfont {(Figure courtesy Google \copyright )}}}}{2}{figure.1.1}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Reconocimiento de caras \relax \fontsize {6}{7}\selectfont {(http://www.netmechanic.co.za/ \copyright )}}}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Diagrama de bloques etapas visi\IeC {\'o}n por computador}}{3}{figure.1.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces KTH Dataset}}{15}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Weizmann Dataset}}{15}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces IXMAS Dataset}}{16}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces MuHAVI Dataset}}{16}{figure.2.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Im\IeC {\'a}genes 570, 610 de secuencia ``\textit {Kick Camera 3 Person 4}''}}{18}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Cambios de intensidad en el tiempo del valor de un pixel }}{19}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Histograma secuencia completa ``\textit {Kick Camera 3 Person 4}''}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Gr\IeC {\'a}fico dispersi\IeC {\'o}n 3D secuencia completa ``\textit {Kick Camera 3 Person 4}''}}{21}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Gr\IeC {\'a}fico dispersi\IeC {\'o}n 2D secuencia completa ``\textit {Kick Camera 3 Person 4}''}}{22}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Procesamiento temporal de tres im\IeC {\'a}genes}}{27}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Filtro temporal spacial}}{28}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparaci\IeC {\'o}n de efectividad del filtro en una secuencia completa}}{29}{figure.3.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Resultado final sin filtro}}}{29}{figure.3.8}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Resultado final con filtro}}}{29}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Aproximaci\IeC {\'o}n de actualizaci\IeC {\'o}n de los pesos}}{30}{figure.3.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Aproximaci\IeC {\'o}n Lineal}}}{30}{figure.3.9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Aproximaci\IeC {\'o}n con dos lineas}}}{30}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Representaci\IeC {\'o}n contadores en 4 bytes}}{31}{figure.3.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Representaci\IeC {\'o}n lineal}}}{31}{figure.3.10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Representaci\IeC {\'o}n con dos lineas}}}{31}{figure.3.10}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces M\IeC {\'e}tricas de calidad est\IeC {\'a}tica}}{38}{figure.4.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mascara estimada}}}{38}{figure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Imagen de referencia}}}{38}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Matriz de Confusi\IeC {\'o}n}}{39}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Curva de operaciones caracter\IeC {\'\i }sticas}}{41}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pesos pixeles falso positivo y negativo}}{43}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Pesos usando funci\IeC {\'o}n tipo sigmoidal}}{44}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Valores D-Score basados en la distancia desde la referencia ground-truth}}{46}{figure.4.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Casos de uso de los requerimientos establecidos en el proyecto}}{51}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Arquitectura modular de software}}{53}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Estructura de datos \textit {OpenCV Mat} }}{56}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama UML de patrones de dise\IeC {\~n}o \textit {Plantilla} y \textit {Estrategia}}}{58}{figure.5.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Patr\IeC {\'o}n de Plantilla}}}{58}{figure.5.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Patr\IeC {\'o}n Estrategia}}}{58}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama UML de clases del sistema base}}{59}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de secuencia}}{61}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama UML herramienta de evaluaci\IeC {\'o}n}}{62}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama en bloques de operaci\IeC {\'o}n de ambos elementos, sistema base de algoritmos y herramienta de evaluaci\IeC {\'o}n de desempe\IeC {\~n}o}}{63}{figure.5.8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Disposici\IeC {\'o}n de las 8 c\IeC {\'a}maras sobre el escenario}}{66}{figure.6.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Vista de las 8 c\IeC {\'a}maras sobre el escenario con diferentes ejemplos de acciones}}}{66}{figure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Disposici\IeC {\'o}n de las 8 c\IeC {\'a}maras sobre el escenario}}}{66}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Ejemplo de acciones humanas con im\IeC {\'a}genes de referencias}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kick}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Punch}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RunStop}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ShotGunCollapse}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {WalkTurnBack}}}{68}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Curvas de operaciones caracter\IeC {\'\i }sticas obtenidas durante experimentaci\IeC {\'o}n, usando dos valores diferentes de factor de aprendizaje}}{72}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\alpha =0.001$}}}{72}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\alpha =0.0002$}}}{72}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Filtro Morfol\IeC {\'o}gico $\alpha =0.001$}}}{72}{figure.6.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Filtro Morfol\IeC {\'o}gico $\alpha =0.0002$}}}{72}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Mediciones de rendimiento global obtenidos para un factor de aprendizaje $\alpha =0.001$}}{74}{figure.6.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Coeficiente Correlaci\IeC {\'o}n MCC}}}{74}{figure.6.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {F-Measure}}}{74}{figure.6.4}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {D-Score}}}{74}{figure.6.4}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Similitud estructural - MSSIM}}}{74}{figure.6.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {PSNR}}}{74}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparaci\IeC {\'o}n de cuadros con dos distintos valores de \textit {threshold} algoritmo \textit {SAGMM}.}}{75}{figure.6.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textit {SAGMM threshold=}$3.5$ ($\alpha =0.001$)}}}{75}{figure.6.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textit {SAGMM threshold=}$6.0$ ($\alpha =0.001$)}}}{75}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Cuadros comparativos m\IeC {\'e}tricas de rendimiento de MCC, F-Measure, y D-Score ($\alpha =0.001$ y $\alpha =0.0002$).}}{81}{figure.6.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {MCC ($\alpha =0.001$)}}}{81}{figure.6.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MCC ($\alpha =0.0002$)}}}{81}{figure.6.6}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {F-Measure ($\alpha =0.001$)}}}{81}{figure.6.6}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {F-Measure - ($\alpha =0.0002$)}}}{81}{figure.6.6}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {D-Score ($\alpha =0.001$)}}}{81}{figure.6.6}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {D-Score - ($\alpha =0.0002$)}}}{81}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Cuadros comparativos m\IeC {\'e}tricas de percepci\IeC {\'o}n PSNR y MSSIM ($\alpha =0.001$ y $\alpha =0.0002$).}}{82}{figure.6.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {PSNR ($\alpha =0.001$)}}}{82}{figure.6.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {PSNR - ($\alpha =0.0002$)}}}{82}{figure.6.7}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {MSSIM ($\alpha =0.001$)}}}{82}{figure.6.7}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {MSSIM - ($\alpha =0.0002$)}}}{82}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Resultado siluetas comparaci\IeC {\'o}n diferentes algoritmos.}}{83}{figure.6.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textit {SAGMM threshold=}$3.5$ ($\alpha =0.001$)}}}{83}{figure.6.8}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textit {NP threshold=}$1x10^-8$ ($\alpha =0.001$)}}}{83}{figure.6.8}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\textit {UCV Staircase threshold=}$8$ ($\alpha =0.001$)}}}{83}{figure.6.8}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\textit {UCV Linear threshold=}$5$ ($\alpha =0.001$)}}}{83}{figure.6.8}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {\textit {MOG2 threshold=}$6$ ($\alpha =0.001$)}}}{83}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Curva operaciones promedio junto con intervalo de confianza de 95\% ($\alpha =0.001$)}}{84}{figure.6.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SAGMM}}}{84}{figure.6.9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non Parametric}}}{84}{figure.6.9}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {UCV Staircase}}}{84}{figure.6.9}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {UCV LINEAR}}}{84}{figure.6.9}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {MOG2}}}{84}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Curva operaciones promedio junto con intervalo de confianza de 95\% ($\alpha =0.0002$)}}{85}{figure.6.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SAGMM}}}{85}{figure.6.10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non Parametric}}}{85}{figure.6.10}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {UCV Staircase}}}{85}{figure.6.10}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {UCV LINEAR}}}{85}{figure.6.10}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {MOG2}}}{85}{figure.6.10}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Gr\IeC {\'a}fica resultado global algoritmo SAGMM consolidado por acci\IeC {\'o}n}}{96}{figure.Alph2.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kick}}}{96}{figure.Alph2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Punch}}}{96}{figure.Alph2.1}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RunStop}}}{96}{figure.Alph2.1}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ShotGunCollapse}}}{96}{figure.Alph2.1}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {WalkTurnBack}}}{96}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Resultados globales de la ejecuci\IeC {\'o}n del algoritmo SAGMM separado por actor y camara.}}{97}{figure.Alph2.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Person1 Camera3}}}{97}{figure.Alph2.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Person1 Camera4}}}{97}{figure.Alph2.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Person4 Camera3}}}{97}{figure.Alph2.2}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Person4 Camera4}}}{97}{figure.Alph2.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Gr\IeC {\'a}fica resultado global algoritmo NP consolidado por acci\IeC {\'o}n}}{98}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kick}}}{98}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Punch}}}{98}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RunStop}}}{98}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ShotGunCollapse}}}{98}{figure.Alph2.3}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {WalkTurnBack}}}{98}{figure.Alph2.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Resultados globales de la ejecuci\IeC {\'o}n del algoritmo NP separado por actor y camara.}}{99}{figure.Alph2.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Person1 Camera3}}}{99}{figure.Alph2.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Person1 Camera4}}}{99}{figure.Alph2.4}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Person4 Camera3}}}{99}{figure.Alph2.4}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Person4 Camera4}}}{99}{figure.Alph2.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Gr\IeC {\'a}fica resultado global algoritmo UCV\_STAIRCASE consolidado por acci\IeC {\'o}n}}{100}{figure.Alph2.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kick}}}{100}{figure.Alph2.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Punch}}}{100}{figure.Alph2.5}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RunStop}}}{100}{figure.Alph2.5}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ShotGunCollapse}}}{100}{figure.Alph2.5}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {WalkTurnBack}}}{100}{figure.Alph2.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Resultados globales de la ejecuci\IeC {\'o}n del algoritmo UCV\_STAIRCASE separado por actor y camara.}}{101}{figure.Alph2.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Person1 Camera3}}}{101}{figure.Alph2.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Person1 Camera4}}}{101}{figure.Alph2.6}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Person4 Camera3}}}{101}{figure.Alph2.6}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Person4 Camera4}}}{101}{figure.Alph2.6}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Gr\IeC {\'a}fica resultado global algoritmo UCV\_LINEAR consolidado por acci\IeC {\'o}n}}{102}{figure.Alph2.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kick}}}{102}{figure.Alph2.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Punch}}}{102}{figure.Alph2.7}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RunStop}}}{102}{figure.Alph2.7}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ShotGunCollapse}}}{102}{figure.Alph2.7}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {WalkTurnBack}}}{102}{figure.Alph2.7}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Resultados globales de la ejecuci\IeC {\'o}n del algoritmo UCV\_LINEAR separado por actor y camara.}}{103}{figure.Alph2.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Person1 Camera3}}}{103}{figure.Alph2.8}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Person1 Camera4}}}{103}{figure.Alph2.8}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Person4 Camera3}}}{103}{figure.Alph2.8}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Person4 Camera4}}}{103}{figure.Alph2.8}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Gr\IeC {\'a}fica resultado global algoritmo MOG2 consolidado por acci\IeC {\'o}n}}{104}{figure.Alph2.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kick}}}{104}{figure.Alph2.9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Punch}}}{104}{figure.Alph2.9}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {RunStop}}}{104}{figure.Alph2.9}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ShotGunCollapse}}}{104}{figure.Alph2.9}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {WalkTurnBack}}}{104}{figure.Alph2.9}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Resultados globales de la ejecuci\IeC {\'o}n del algoritmo MOG2 separado por actor y camara.}}{105}{figure.Alph2.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Person1 Camera3}}}{105}{figure.Alph2.10}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Person1 Camera4}}}{105}{figure.Alph2.10}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Person4 Camera3}}}{105}{figure.Alph2.10}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Person4 Camera4}}}{105}{figure.Alph2.10}
